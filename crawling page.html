@@ -405,12 +405,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: builtwith in /usr/local/python/3.12.1/lib/python3.12/site-packages (1.3.4)
-Requirement already satisfied: six in /home/codespace/.local/lib/python3.12/site-packages (from builtwith) (1.17.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting builtwith
+  Downloading builtwith-1.3.4.tar.gz (34 kB)
+  Preparing metadata (setup.py) ... ?25l?25hdone
+Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from builtwith) (1.17.0)
+Building wheels for collected packages: builtwith
+  Building wheel for builtwith (setup.py) ... ?25l?25hdone
+  Created wheel for builtwith: filename=builtwith-1.3.4-py3-none-any.whl size=36077 sha256=31934737992a5d70ecf64f784f53026390c6e7b463c9d4dc3181a8f5857652c9
+  Stored in directory: /root/.cache/pip/wheels/7f/2d/b2/606e3df914d4aeeab99c4a4e3e9a61673d2293c2e346db00c8
+Successfully built builtwith
+Installing collected packages: builtwith
+Successfully installed builtwith-1.3.4
 </pre></div>
 </div>
 </div>
@@ -465,160 +470,404 @@ Requirement already satisfied: six in /home/codespace/.local/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi kesalahan saat mengakses </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1"># Gunakan fungsi</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="n">crawl_website</span><span class="p">(</span><span class="s2">&quot;https://trunojoyo.ac.id/&quot;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h3:  Unggul
+h3:  Tangguh
+h3:  Mandiri
+h2: Tentang UTM
+h2: Excellence Base On Local Wisdom
+h2: PIMPINAN UNIVERSITAS TRUNOJOYO MADURA
+h3: Prof. Dr. Safi’, S.H., M.H.
+h3: Prof. Dr. Achmad Amzeri, S.P., M.P.
+h3: Ir. Ari Basuki, S.T., M.T.
+h3: Surokim, S.Sos., S.H., M.Si.
+h2: Sampaikan Saran Disini
+h3: Laman Penunjang
+h3: Alamat
+h3: Email Address
+h3: Telepon, WA
+h3: Official Account
+URL: https://www2.trunojoyo.ac.id/ | Teks: 
 
-<span class="nn">Cell In[3], line 6,</span> in <span class="ni">crawl_website</span><span class="nt">(url)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span><span class="w"> </span><span class="nf">crawl_website</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an error for bad status codes</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
-<span class="sd">   (...)     70     :rtype: requests.Response</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+URL: tel:031-3011146 | Teks: 031-3011146
+URL: mailto:humas@trunojoyo.ac.id | Teks: humas@trunojoyo.ac.id
+URL: # | Teks:   
+URL: #  | Teks:   
+URL: #  | Teks:   
+URL: #  | Teks:   
+URL: # | Teks: Tentang
+URL: https://www2.trunojoyo.ac.id/index.php/sejarahutm/ | Teks: Sejarah
+URL: https://www2.trunojoyo.ac.id/index.php/profil-singkat/ | Teks: Profil Singkat
+URL: https://www2.trunojoyo.ac.id/index.php/visimisi/ | Teks: Visi dan Misi
+URL: https://www2.trunojoyo.ac.id/index.php/lhm/ | Teks: Logo, Hymne dan Mars
+URL: https://www2.trunojoyo.ac.id/index.php/organ-utm/ | Teks: Organisasi UTM
+URL: # | Teks: Alumni
+URL: # | Teks: Kelembagaan
+URL: # | Teks: Fakultas
+URL: https://hukum.trunojoyo.ac.id/ | Teks: Hukum
+URL: https://feb.trunojoyo.ac.id/ | Teks: Ekonomi &amp; Bisnis
+URL: https://pertanian.trunojoyo.ac.id/ | Teks: Pertanian
+URL: https://teknik.trunojoyo.ac.id/ | Teks: Teknik
+URL: https://fisib.trunojoyo.ac.id/ | Teks: Ilmu Sosial &amp; Ilmu Budaya
+URL: https://fip.trunojoyo.ac.id/ | Teks: Keguruan &amp; Ilmu Pendidikan
+URL: https://fik.trunojoyo.ac.id/ | Teks: Keislaman
+URL: https://pasca.trunojoyo.ac.id/ | Teks: Pascasarjana
+URL: # | Teks: Lembaga
+URL: https://lpmpp.trunojoyo.ac.id/ | Teks: LPMPP
+URL: https://lppm.trunojoyo.ac.id/ | Teks: LPPM
+URL: # | Teks: SPI
+URL: # | Teks: BAKK
+URL: # | Teks: BPKU
+URL: https://asrama.trunojoyo.ac.id/ | Teks: Asrama
+URL: # | Teks: IRO
+URL: # | Teks: Pusat Karir
+URL: # | Teks: UPA
+URL: https://tik.trunojoyo.ac.id/ | Teks: UPA. TIK
+URL: https://pusatbahasa.trunojoyo.ac.id/ | Teks: UPA. Bahasa
+URL: https://library.trunojoyo.ac.id/ | Teks: UPA. Perpustakaan
+URL: # | Teks: UPA. Sertifikasi
+URL: https://labterpadu.trunojoyo.ac.id/ | Teks: UPA. Laboratorium Terpadu
+URL: # | Teks: UPA. Pengembangan Karier dan Kewirausahaan
+URL: # | Teks: Data
+URL: https://www2.trunojoyo.ac.id/index.php/data-penelitian-2/ | Teks: Data Penelitian
+URL: # | Teks: Data Pengabdian Kepada Masyarakat
+URL: https://www2.trunojoyo.ac.id/index.php/data-kerjasama/ | Teks: Data Kerjasama
+URL: # | Teks: Admisi
+URL: # | Teks: SNPMB
+URL: # | Teks: Mandiri
+URL: # | Teks: RPL
+URL: # | Teks: Dokumen
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
+URL: https://ppid.trunojoyo.ac.id | Teks: PPID
+URL: mailto:support.industrie@gmail.com | Teks: 
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+ 
+Email. humas@trunojoyo.ac.id
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
+URL: tel:+971%20551%20579%20261 | Teks: 
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:724,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="k">if</span> <span class="n">allow_redirects</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">722</span>     <span class="c1"># Redirect resolving generator.</span>
-<span class="g g-Whitespace">    </span><span class="mi">723</span>     <span class="n">gen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">724</span>     <span class="n">history</span> <span class="o">=</span> <span class="p">[</span><span class="n">resp</span> <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>     <span class="n">history</span> <span class="o">=</span> <span class="p">[]</span>
+ 
+Telp. 031-3011146
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:265,</span> in <span class="ni">SessionRedirectMixin.resolve_redirects</span><span class="nt">(self, resp, req, stream, timeout, verify, cert, proxies, yield_requests, **adapter_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="k">yield</span> <span class="n">req</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">265</span>     <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="n">req</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>         <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="n">cert</span><span class="o">=</span><span class="n">cert</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>         <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span>         <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>         <span class="o">**</span><span class="n">adapter_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">extract_cookies_to_jar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cookies</span><span class="p">,</span> <span class="n">prepared_request</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="c1"># extract redirect url, if any, for the next loop</span>
+URL: https://wa.me/6281133330046 | Teks: 
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+ 
+WA. +62811-3333-0046
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/adapters.py:667,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">667</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">681</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+URL: https://www.trunojoyo.ac.id/ | Teks: 
+ 
+URL: https://drive.google.com/drive/folders/1G8tmMYJ6S58BtzwRP9V_78XkNOl3aR8y?usp=sharing | Teks: 
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:787,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="c1"># Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">787</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="c1"># Everything went great!</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+ 
+Download Center
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:464,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="c1"># Trigger any extra validation we need to do.</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">464</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">conn</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+URL: # | Teks: Tentang 
+URL: https://www2.trunojoyo.ac.id/index.php/sejarahutm/ | Teks: Sejarah
+URL: https://www2.trunojoyo.ac.id/index.php/profil-singkat/ | Teks: Profil Singkat
+URL: https://www2.trunojoyo.ac.id/index.php/visimisi/ | Teks: Visi dan Misi
+URL: https://www2.trunojoyo.ac.id/index.php/lhm/ | Teks: Logo, Hymne dan Mars
+URL: https://www2.trunojoyo.ac.id/index.php/organ-utm/ | Teks: Organisasi UTM
+URL: # | Teks: Alumni
+URL: # | Teks: Kelembagaan 
+URL: # | Teks: Fakultas 
+URL: https://hukum.trunojoyo.ac.id/ | Teks: Hukum
+URL: https://feb.trunojoyo.ac.id/ | Teks: Ekonomi &amp; Bisnis
+URL: https://pertanian.trunojoyo.ac.id/ | Teks: Pertanian
+URL: https://teknik.trunojoyo.ac.id/ | Teks: Teknik
+URL: https://fisib.trunojoyo.ac.id/ | Teks: Ilmu Sosial &amp; Ilmu Budaya
+URL: https://fip.trunojoyo.ac.id/ | Teks: Keguruan &amp; Ilmu Pendidikan
+URL: https://fik.trunojoyo.ac.id/ | Teks: Keislaman
+URL: https://pasca.trunojoyo.ac.id/ | Teks: Pascasarjana
+URL: # | Teks: Lembaga 
+URL: https://lpmpp.trunojoyo.ac.id/ | Teks: LPMPP
+URL: https://lppm.trunojoyo.ac.id/ | Teks: LPPM
+URL: # | Teks: SPI
+URL: # | Teks: BAKK
+URL: # | Teks: BPKU
+URL: https://asrama.trunojoyo.ac.id/ | Teks: Asrama
+URL: # | Teks: IRO
+URL: # | Teks: Pusat Karir
+URL: # | Teks: UPA 
+URL: https://tik.trunojoyo.ac.id/ | Teks: UPA. TIK
+URL: https://pusatbahasa.trunojoyo.ac.id/ | Teks: UPA. Bahasa
+URL: https://library.trunojoyo.ac.id/ | Teks: UPA. Perpustakaan
+URL: # | Teks: UPA. Sertifikasi
+URL: https://labterpadu.trunojoyo.ac.id/ | Teks: UPA. Laboratorium Terpadu
+URL: # | Teks: UPA. Pengembangan Karier dan Kewirausahaan
+URL: # | Teks: Data 
+URL: https://www2.trunojoyo.ac.id/index.php/data-penelitian-2/ | Teks: Data Penelitian
+URL: # | Teks: Data Pengabdian Kepada Masyarakat
+URL: https://www2.trunojoyo.ac.id/index.php/data-kerjasama/ | Teks: Data Kerjasama
+URL: # | Teks: Admisi 
+URL: # | Teks: SNPMB
+URL: # | Teks: Mandiri
+URL: # | Teks: RPL
+URL: # | Teks: Dokumen 
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
+URL: https://www2.trunojoyo.ac.id/index.php/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
+URL: https://ppid.trunojoyo.ac.id | Teks: PPID
+URL: https://industrie.rstheme.com/laboratory/about/ | Teks: 
+Selengkapnya 
+									
+  
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1093,</span> in <span class="ni">HTTPSConnectionPool._validate_conn</span><span class="nt">(self, conn)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1091</span> <span class="c1"># Force connect early to allow us to validate the connection.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1092</span> <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">is_closed</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1093</span>     <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="c1"># TODO revise this, see https://github.com/urllib3/urllib3/issues/2791</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">conn</span><span class="o">.</span><span class="n">is_verified</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">conn</span><span class="o">.</span><span class="n">proxy_is_verified</span><span class="p">:</span>
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connection.py:753,</span> in <span class="ni">HTTPSConnection.connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="n">sock</span><span class="p">:</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span> <span class="o">|</span> <span class="n">ssl</span><span class="o">.</span><span class="n">SSLSocket</span>
-<span class="ne">--&gt; </span><span class="mi">753</span>     <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="n">sock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span>     <span class="n">server_hostname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span>     <span class="n">tls_in_tls</span> <span class="o">=</span> <span class="kc">False</span>
+URL: https://www2.trunojoyo.ac.id/index.php/2025/09/09/prodi-pendidikan-informatika-utm-sukses-selenggarakan-national-conference-on-informatics-education-perdana/ | Teks: 
+ 
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connection.py:198,</span> in <span class="ni">HTTPConnection._new_conn</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Establish a socket connection and set nodelay settings on it.</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd"> :return: New socket connection.</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">198</span>     <span class="n">sock</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span>         <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>         <span class="n">source_address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">source_address</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">socket_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">socket_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">raise</span> <span class="n">NameResolutionError</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/util/connection.py:73,</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">if</span> <span class="n">source_address</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">source_address</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">73</span> <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sa</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="c1"># Break explicitly a reference cycle</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="n">err</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="ne">KeyboardInterrupt</span>: 
+								09 Sep 2025							
+
+
+									Headlines									
+
+Prodi Pendidikan Informatika UTM Sukses Selenggarakan National Conference on Informatics Education Perdana
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/24/universitas-trunojoyo-madura-kukuhkan-994-wisudawan-pada-sesi-kedua-wisuda-ke-39/ | Teks: 
+ 
+
+
+
+								24 Agu 2025							
+
+
+									Headlines									
+
+Universitas Trunojoyo Madura Kukuhkan 994 Wisudawan pada Sesi Kedua Wisuda ke-39
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/23/rapat-senat-terbuka-dalam-rangka-wisuda-ke-xxxix-987-lulusan-dikukuhkan-pada-sesi-hari-pertama/ | Teks: 
+ 
+
+
+
+								23 Agu 2025							
+
+
+									Headlines									
+
+Rapat Senat Terbuka dalam Rangka Wisuda ke-XXXIX, 987 Lulusan Dikukuhkan pada Sesi Hari Pertama
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/09/04/utm-lepas-jamaah-penerima-hadiah-umroh-wujud-syukur-dies-natalis-ke-24/ | Teks: 
+ 
+
+
+
+								04 Sep 2025							
+
+
+									Berita									
+
+UTM Lepas Jamaah Penerima Hadiah Umroh, Wujud Syukur Dies Natalis ke-24
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/29/utm-raih-penghargaan-entrepreneurial-marketing-campus-for-impact-dari-markplus-institute-dan-mcorp/ | Teks: 
+ 
+
+
+
+								29 Agu 2025							
+
+
+									Berita									
+
+UTM Raih Penghargaan Entrepreneurial Marketing Campus For Impact dari Markplus Institute dan MCORP
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/04/utm-canangkan-green-campus-menko-ahy-tanam-pohon-eboni-di-samping-warisan-sang-ayah/ | Teks: 
+ 
+
+
+
+								04 Agu 2025							
+
+
+									Berita									
+
+UTM Canangkan Green Campus, Menko AHY Tanam Pohon Eboni di Samping Warisan Sang Ayah
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/halber/ | Teks: 
+More 
+									
+  
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/20/pengumuman-penerima-bantuan-keringanan-uang-kuliah-tunggal-bagi-mahasiswa-universitas-trunojoyo-madura-berupa-pembebasan-dan-uang-kuliah-tunggal-50-semester-gasal-tahap-ii-tahun-akademik-2025-2026/ | Teks: 
+ 
+
+
+
+								20 Agu 2025							
+
+
+									Headlines									
+
+PENGUMUMAN PENERIMA BANTUAN KERINGANAN UANG KULIAH TUNGGAL BAGI MAHASISWA UNIVERSITAS TRUNOJOYO MADURA BERUPA PEMBEBASAN DAN  UANG KULIAH TUNGGAL 50% SEMESTER GASAL TAHAP II  TAHUN AKADEMIK 2025/2026
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/19/pengumuman-jadwal-wisuda-xxxix-tahun-2025/ | Teks: 
+ 
+
+
+
+								19 Agu 2025							
+
+
+									Headlines									
+
+PENGUMUMAN JADWAL WISUDA XXXIX TAHUN 2025
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/14/pengumuman-penerima-bantuan-keringanan-uang-kuliah-tunggal-bagi-mahasiswa-universitas-trunojoyo-madura-berupa-pembebasan-dan-uang-kuliah-tunggal-50-semester-gasal-tahun-akademik-2025-2026/ | Teks: 
+ 
+
+
+
+								14 Agu 2025							
+
+
+									Headlines									
+
+PENGUMUMAN PENERIMA BANTUAN KERINGANAN UANG KULIAH TUNGGAL BAGI MAHASISWA UNIVERSITAS TRUNOJOYO MADURA BERUPA PEMBEBASAN DAN  UANG KULIAH TUNGGAL 50% SEMESTER GASAL  TAHUN AKADEMIK 2025/2026
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/halinformasi/ | Teks: 
+More 
+									
+  
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/09/09/prodi-pendidikan-informatika-utm-sukses-selenggarakan-national-conference-on-informatics-education-perdana/ | Teks: 
+ 
+
+
+
+								09 Sep 2025							
+
+
+									Headlines									
+
+Prodi Pendidikan Informatika UTM Sukses Selenggarakan National Conference on Informatics Education Perdana
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/24/universitas-trunojoyo-madura-kukuhkan-994-wisudawan-pada-sesi-kedua-wisuda-ke-39/ | Teks: 
+ 
+
+
+
+								24 Agu 2025							
+
+
+									Headlines									
+
+Universitas Trunojoyo Madura Kukuhkan 994 Wisudawan pada Sesi Kedua Wisuda ke-39
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/2025/08/23/rapat-senat-terbuka-dalam-rangka-wisuda-ke-xxxix-987-lulusan-dikukuhkan-pada-sesi-hari-pertama/ | Teks: 
+ 
+
+
+
+								23 Agu 2025							
+
+
+									Headlines									
+
+Rapat Senat Terbuka dalam Rangka Wisuda ke-XXXIX, 987 Lulusan Dikukuhkan pada Sesi Hari Pertama
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/halaman-kegiatan/ | Teks: 
+More 
+									
+  
+
+
+URL: https://www.youtube.com/watch?v=2A48_GKuX1o | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/data-kerjasama/ | Teks: 
+Data Lengkap 
+									
+  
+
+
+URL: https://www2.trunojoyo.ac.id/index.php/teams/safi/ | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/safi/ | Teks: 
+											
+											Prof. Dr. Safi’, S.H., M.H.
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/lawrence-peter/ | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/lawrence-peter/ | Teks: 
+											
+											Prof. Dr. Achmad Amzeri, S.P., M.P.
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/bradley-roy/ | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/bradley-roy/ | Teks: 
+											
+											Ir. Ari Basuki, S.T., M.T.
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/john-maxwell/ | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://www2.trunojoyo.ac.id/index.php/teams/john-maxwell/ | Teks: 
+											
+											Surokim, S.Sos., S.H., M.Si.
+URL: # | Teks: 
+URL: # | Teks: 
+URL: # | Teks: 
+URL: https://siakad.trunojoyo.ac.id/ | Teks: SIAKAD
+URL: https://mbkm.trunojoyo.ac.id/ | Teks: SI MBKM
+URL: https://simpelmas.trunojoyo.ac.id/ | Teks: SIMPELMAS
+URL: # | Teks: SIMKEU
+URL: # | Teks: SIMPEG
+URL: # | Teks: ASN DIGITAL
+URL: https://a002.utm.ac.id/ | Teks: e – PRESENSI
+URL: https://a001.utm.ac.id/ | Teks: e – RPS
+URL: https://my.utm.ac.id/ | Teks: myUTM
+URL: mailto:humas@trunojoyo.ac.id | Teks: humas@trunojoyo.ac.id
+URL: https://www.instagram.com/universitastrunojoyomadura | Teks: 
+Instagram
+ 
+URL: http://youtube.com/@universitastrunojoyomadura2433 | Teks: 
+Youtube
+ 
+URL: https://www.facebook.com/profile.php?id=61568220782221&amp;sk=about | Teks: 
+Facebook-f
+ 
+URL: https://www.tiktok.com/@univ.trunojoyomadura?is_from_webapp=1&amp;sender_device=pc | Teks: 
+Tiktok
+ 
+URL: https://www.threads.net/@universitastrunojoyomadura | Teks: 
+Threads
+ 
+URL: https://x.com/utmOfficial | Teks: 
+X-twitter
+ 
 </pre></div>
 </div>
 </div>
