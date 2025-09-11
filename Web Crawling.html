@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Web Crawling &#8212; My sample book</title>
+    <title>crawling &#8212; My sample book</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Web Crawling';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="crawling page" href="crawling%20page.html" />
     <link rel="prev" title="Pengantar Web Mining" href="Pengantar%20Web%20Mining.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,7 +182,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro1.html">Profile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pengantar%20Web%20Mining.html">Pengantar Web Mining</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Web Crawling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling%20page.html">crawling page</a></li>
 </ul>
 
     </div>
@@ -367,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Web Crawling</h1>
+    <h1>crawling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,9 +379,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-melakukan-crawling">tugas melakukan crawling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-mengerjakan">Langkah-langkah mengerjakan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-hasil-ke-csv">Simpan Hasil ke CSV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Simpan Hasil ke CSV</a></li>
 </ul>
             </nav>
         </div>
@@ -391,8 +392,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="web-crawling">
-<h1>Web Crawling<a class="headerlink" href="#web-crawling" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling">
+<h1>crawling<a class="headerlink" href="#crawling" title="Link to this heading">#</a></h1>
+<section id="tugas-melakukan-crawling">
+<h2>tugas melakukan crawling<a class="headerlink" href="#tugas-melakukan-crawling" title="Link to this heading">#</a></h2>
+</section>
 <section id="langkah-langkah-mengerjakan">
 <h2>Langkah-langkah mengerjakan<a class="headerlink" href="#langkah-langkah-mengerjakan" title="Link to this heading">#</a></h2>
 <p>Siapkan website untuk kalian crawling, dalam contoh kasus ini kita akan mengambil jurnal yang ada di website springer nature. Selanjutnya, buka website <a class="reference external" href="https://dev.springernature.com/">https://dev.springernature.com/</a> lalu buat akun untuk mendapat API yang kalian butuhkan (meta API), copy API yang kalian dapatkan dan paste ke kode yang telah kalian buat.</p>
@@ -404,41 +408,37 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sprynger
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading sprynger-0.4.1-py3-none-any.whl.metadata (5.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting lxml (from sprynger)
-  Downloading lxml-6.0.1-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/codespace/.local/lib/python3.12/site-packages (from sprynger) (2.32.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sprynger in /usr/local/python/3.12.1/lib/python3.12/site-packages (0.4.1)
+Requirement already satisfied: lxml in /usr/local/python/3.12.1/lib/python3.12/site-packages (from sprynger) (6.0.1)
+Requirement already satisfied: requests in /home/codespace/.local/lib/python3.12/site-packages (from sprynger) (2.32.4)
 Requirement already satisfied: urllib3 in /home/codespace/.local/lib/python3.12/site-packages (from sprynger) (2.5.0)
 Requirement already satisfied: platformdirs in /home/codespace/.local/lib/python3.12/site-packages (from sprynger) (4.3.8)
-Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests-&gt;sprynger) (3.4.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests-&gt;sprynger) (3.4.2)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from requests-&gt;sprynger) (3.10)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/codespace/.local/lib/python3.12/site-packages (from requests-&gt;sprynger) (2025.7.9)
-Downloading sprynger-0.4.1-py3-none-any.whl (40 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading lxml-6.0.1-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.3 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/5.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.3/5.3 MB</span> <span class=" -Color -Color-Red">37.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: lxml, sprynger
-?25l
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1/2</span> [sprynger]
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/2</span> [sprynger]
-?25h
-Successfully installed lxml-6.0.1 sprynger-0.4.1
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: beautifulsoup4 in /home/codespace/.local/lib/python3.12/site-packages (4.13.4)
+Requirement already satisfied: soupsieve&gt;1.2 in /home/codespace/.local/lib/python3.12/site-packages (from beautifulsoup4) (2.7)
+Requirement already satisfied: typing-extensions&gt;=4.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from beautifulsoup4) (4.14.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
@@ -453,468 +453,157 @@ Successfully installed lxml-6.0.1 sprynger-0.4.1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="c1"># Silahkan membuat api key dari https://dev.springernature.com/#api</span>
-<span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;ce144a12624a303d0e0047e0bd6349a8&quot;</span>
-<span class="n">isbn</span> <span class="o">=</span> <span class="s2">&quot;978-3-031-63497-0&quot;</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.springernature.com/meta/v2/json&quot;</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;web mining&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
-    <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total hasil: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;total&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]:</span>
-        <span class="n">doi</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doi&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;No title&#39;</span><span class="p">)</span>
-        <span class="n">abstract</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;No abstract&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DOI: </span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Abstract: </span><span class="si">{</span><span class="n">abstract</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total hasil: 317019
-
-DOI: 10.1007/978-3-032-00983-8_5
-Title: Survey on Data Mining and Machine Learning Methods Used in Analyzing Tweets
-Abstract: It is observed that the Mental illness by the actions and individual emotions and expressions towards a particular situation. It indicates that American Psychiatric Association that has 19% of people experience mental illness. Nearly 4.1% of people [ 1 ] are seriously affected by mental illness. In 2019, World Health Organization(WHO) reported that 264 million people suffer from mental disorders. With the technological growth and affordable internet access, social media usage and impacts are increased in society. Users use social networks to show their emotions, views, and comments related to mental health on various events and themselves. Different intelligent methods that analyze tweets related to depression are summarized. New research areas in analyzing data on social networks are discussed. This article highlights the data mining and machine learning methods associated with mental health using Twitter data.
-
-DOI: 10.1007/978-3-031-93802-3_7
-Title: Unveiling Power Laws in Graph Mining: Techniques and Applications in Graph Query Analysis
-Abstract: Power laws play a crucial role in understanding the structural and functional properties of real-world graphs, influencing various aspects of graph mining and query processing. This paper explores the prevalence of power-law distributions in large-scale graph structures and their implications for graph query analysis. We investigate techniques for efficiently mining graphs that exhibit power-law characteristics, leveraging these distributions to optimize query performance and scalability. Our study presents a comprehensive review of existing methodologies for detecting power-law behavior in graphs, highlighting their impact on graph traversal, indexing, and query execution. We also examine algorithmic optimizations tailored for power-law graphs, including degree-based indexing, community-aware search techniques, and efficient subgraph matching approaches. Furthermore, we discuss the applications of power-law principles in diverse domains such as social network analysis, bioinformatics, and knowledge graphs. Through empirical analysis on real-world datasets, we demonstrate how power-law-aware techniques improve query efficiency and reduce computational complexity in large graph databases. The findings of this study offer valuable insights into the interplay between graph topology and query optimization, paving the way for enhanced graph mining frameworks. Our work contributes to the development of more scalable and intelligent graph query processing systems, with broad implications for data-driven decision-making.
-
-DOI: 10.1007/978-981-96-7238-7_2
-Title: Architecture Mining Approach for Systems-of-Systems: Monitoring and Discovery
-Abstract: Context: Systems of Systems (SoS) constitute a type of complex software systems resulting from integrating heterogeneous constituent systems that are independently operable on their own but are networked together for a common goal. Each constituent system has its own purpose and could operate and collaborate voluntarily with other constituent systems to achieve a common goal that cannot be treated by any of them in isolation. Objective: A constituent system may be deployed or undeployed at run-time within an SoS. Emergent behaviors may be undesirable and affect the behaviors of each constituent system and lead to unexpected operations and a lack of permanent status in the SoS. Thus, we need to continuously extract and represent the actual behaviors within the SoS at run-time. Method: In this paper, we implement the first step our “Architecture Mining” approach. Thus, we monitor an SoS and develop Discovery algorithm to extract the actual behaviors. The actual behaviors are presented by a “Discovered Model” dynamically and automatically built from the execution traces. Results: To implement our approach, we applied it to a case study entitled Smart City, which is an SoS including six types of constituent systems. We extracted the actual behaviors executed at run time from the SoS execution traces, which have never been modeled in any constituent system nor expected by the designer.
-
-DOI: 10.1007/978-3-031-95296-8_15
-Title: A Mathematical Model and Algorithm for Data Analysis in the Intelligent Management System for Mining and Transport Complexes
-Abstract: Machine learning methods play an important role in creating algorithms for data analysis in the mining industry. These methods allow you to train the system based on historical data and identify hidden patterns that may not be obvious in traditional analysis. Machine learning algorithms can be used to predict breakdowns, optimize production processes and identify anomalies in the operation of machinery. For example, with the help of training on data on the operation of equipment, you can create a model that will predict the probability of failure of a certain part under specified operating conditions.
-
-DOI: 10.1007/978-3-031-90470-7_6
-Title: ‘Internet of Things’ and ‘Social Networking’: Containment
-Abstract: Moving to the post-2000 period, or the post-formation Internet Polity, this chapter begins with the implications of the internet becoming the centred repository of sources, medium of investigation, and object in historicist accounts of recent and contemporary events. Debates on ‘technological determinism Technological determinism ’ are considered here. As events, 9/11 and the 2000 dot-com crash are pegged as turning points. A broad argument is proposed about the condition of the Internet Polity thereafter. It is suggested that it became contained in two moves during the 2000s. This containment involved, first, a space of the internet opening beyond the scope of the Internet Polity. This space incorporated data exchanges between ‘smart’ objects, unsupervised systems, and machine-learning systems. Second, much of the Internet Polity discourse and collective life became concentrated in very large platforms, which have global reach, local penetration, and data-management standards. This move facilitated the burgeoning data market and fed into the first move. The two moves are outlined by focusing on two catchwords and related terms. The first is addressed via the connotations of ‘Internet of Things’ and ‘smart’ objects, and the second by pausing on ‘social networking’ (on ‘sites’ or ‘platforms’). This chapter, and the study, concludes by briefly reconsidering the formative first principles of the Internet Polity, and pinpointing areas for further investigations.
-
-DOI: 10.1007/978-3-031-93802-3_10
-Title: Integrating Graph Convolutional Networks for Web Traffic Prediction
-Abstract: Web traffic forecasting plays a crucial role in optimizing network resources, enhancing user experience, and ensuring efficient server load management. Traditional approaches, such as ARIMA, SARIMA, and machine learning methods like support vector machines and decision trees, focus primarily on temporal data. These models, however, often fail to capture the intricate relationships within web traffic data, such as user interactions or page-to-page connections, resulting in sub-optimal predictive performance. Graph Convolutional Networks (GCNs) address these limitations by modeling web traffic as a graph, where web pages or users are represented as nodes, and their interactions form edges. GCNs aggregate node information through graph structures, enabling the model to learn both spatial and temporal dependencies inherent in web traffic. This ability to exploit complex data relationships makes GCNs well-suited for more accurate and dynamic web traffic predictions. In this work, we propose a GCN-based framework for web traffic forecasting, incorporating multiple optimizers like Adam, RMSProp, and SGD to identify the model’s fair performance. By optimizing training through these methods, the GCN model efficiently captures both short-term fluctuations and long-term trends in web traffic patterns. Our study highlights the potential of GCNs in elevating the accuracy and reliability of web traffic forecasting. The integration of advanced optimizers further enhances convergence and prediction efficiency, offering a more scalable solution to meet the demands of rapidly growing and complex web systems.
-
-DOI: 10.1007/978-3-031-93257-1_6
-Title: Adaptive Web API Recommendation via Matching Service Clusters and Mashup Requirement
-Abstract: With the rapid proliferation of Web services and Web APIs, recommendation systems can effectively address the issue of information overload and alleviate the burden of meaningless filtering. Existing approaches can help filtering appropriate Web services for mashup creation, however, they often fall short of developers’ different and personalized needs by recommending only a fixed number of APIs and lack precision in aligning mashup requirements across all categories. To solve the above issue, this paper introduces a novel Web service recommendation framework called AWAR for mashup creation, which focuses on the matching strategy between mashup requirements and Web APIs, and enhances recommendation effectiveness by integrating natural language processing, optimization algorithms, and deep learning. Extensive experiments conducted on large-scale real datasets demonstrate that the proposed approach receives superior recommendation results on multiple evaluation metrics compared to advanced competing baselines.
-
-DOI: 10.1007/978-3-032-02215-8_3
-Title: Leveraging Machine Learning Techniques for Customer Data Deduplication - Hard-Won Lessons from a Real-World Project in the Financial Industry
-Abstract: This paper is associated with a tutorial presented at DEXA 2025 Conferences and Workshops. The tutorial shares the practical experience gained from a 3-year R&amp;D project for a big financial institution in Poland. The project aimed at developing deduplication pipelines for customer records. It involved the development of two distinct end-to-end deduplication pipelines that are based on (1) statistical/probabilistic modeling and on (2) machine learning. This tutorial focuses on lessons learned from developing the machine learning pipeline , within the context of a real-world industrial setting. Moreover, this tutorial provides an overview of approaches to data deduplication, including the traditional state-of-the-art baseline deduplication pipeline, solutions based on machine learning and neural networks that apply pre-trained and large language models.
-
-DOI: 10.1007/978-3-031-95296-8_21
-Title: Intelligent Control System for Ore Transportation and Grinding Process in Gold Mining Fields
-Abstract: This paper is devoted to optimizing the processes of work using intellectual control systems for the transportation and grinding of ore in gold mining fields. Ore is being optimized through the introduction of modern technologies and information systems in the transportation and grinding processes in order to increase efficiency, reduce energy consumption and reduce production costs. The paper examines the applications of IoT technologies, artificial intelligence, and large-scale data analysis in ore transport and grinding processes. With these systems, there is talk of monitoring processes in real time and improving the efficiency of equipment operation. New methods for managing ore transport and grinding processes through mathematical models, optimization algorithms and artificial neural networks are also presented. The results of scientific research in this paper can contribute to innovations and technological developments in the field of gold mining. Improving efficiency through automation of gold mining processes and intellectual management systems not only contributes to economic benefits, but also to the protection of the environment.
-
-DOI: 10.1007/978-3-032-02088-8_29
-Title: Benchmarking Embedding Techniques for Modeling User Navigation Behavior on Task-Oriented Software
-Abstract: Understanding user navigation patterns from clickstream data is crucial for improving business software, yet remains challenging due to the complexity and variability of real-world environments. Unlike controlled settings, real-world clickstreams are noisy, fragmented, and often incomplete, due to session timeouts, network issues, caching, or third-party interactions—making it difficult to reconstruct coherent user journeys. Additionally, the absence of labeled data hinders the use of supervised learning, pushing researchers toward unsupervised or heuristic-based approaches that struggle to fully capture user behavior. In this paper, we present a benchmark of embedding techniques for modeling user navigation behavior on task-oriented software. We identify distinct user behaviors across three real-world case studies. Results show that Pattern2Vec outperforms Word2Vec in capturing meaningful task-based navigation patterns, confirming its suitability for clickstream analysis.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-
-<span class="c1"># API Key Springer</span>
-<span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;ce144a12624a303d0e0047e0bd6349a8&quot;</span>
-
-<span class="c1"># Daftar kata kunci pencarian</span>
-<span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;web mining&quot;</span><span class="p">,</span> <span class="s2">&quot;web usage mining&quot;</span><span class="p">,</span> <span class="s2">&quot;web content mining&quot;</span><span class="p">]</span>
-
-<span class="c1"># URL endpoint API Springer</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.springernature.com/meta/v2/json&quot;</span>
-
-<span class="c1"># Buat file CSV</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;springer_crawling.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
-    <span class="c1"># Header CSV</span>
-    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;keyword&quot;</span><span class="p">,</span> <span class="s2">&quot;doi&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;abstract&quot;</span><span class="p">])</span>
-
-    <span class="c1"># Loop setiap keyword</span>
-    <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">keyword</span><span class="p">,</span>
-            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
-            <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">10</span>   <span class="c1"># jumlah hasil per query (maks 50 per request)</span>
-        <span class="p">}</span>
-
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="n">total</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">] Total hasil: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Simpan ke CSV</span>
-            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]:</span>
-                <span class="n">doi</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doi&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;No title&#39;</span><span class="p">)</span>
-                <span class="n">abstract</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;No abstract&#39;</span><span class="p">)</span>
-
-                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">keyword</span><span class="p">,</span> <span class="n">doi</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">abstract</span><span class="p">])</span>
-
-                <span class="c1"># Print di console (opsional)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DOI: </span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Abstract: </span><span class="si">{</span><span class="n">abstract</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span><span class="si">}</span><span class="s2">...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> untuk keyword </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[web mining] Total hasil: 317019
-DOI: 10.1007/978-3-032-00983-8_5
-Title: Survey on Data Mining and Machine Learning Methods Used in Analyzing Tweets
-Abstract: It is observed that the Mental illness by the actions and individual emotions and expressions towards a particular situation. It indicates that Americ...
-
-DOI: 10.1007/978-3-031-93802-3_7
-Title: Unveiling Power Laws in Graph Mining: Techniques and Applications in Graph Query Analysis
-Abstract: Power laws play a crucial role in understanding the structural and functional properties of real-world graphs, influencing various aspects of graph mi...
-
-DOI: 10.1007/978-981-96-7238-7_2
-Title: Architecture Mining Approach for Systems-of-Systems: Monitoring and Discovery
-Abstract: Context: Systems of Systems (SoS) constitute a type of complex software systems resulting from integrating heterogeneous constituent systems that are ...
-
-DOI: 10.1007/978-3-031-95296-8_15
-Title: A Mathematical Model and Algorithm for Data Analysis in the Intelligent Management System for Mining and Transport Complexes
-Abstract: Machine learning methods play an important role in creating algorithms for data analysis in the mining industry. These methods allow you to train the ...
-
-DOI: 10.1007/978-3-031-90470-7_6
-Title: ‘Internet of Things’ and ‘Social Networking’: Containment
-Abstract: Moving to the post-2000 period, or the post-formation Internet Polity, this chapter begins with the implications of the internet becoming the centred ...
-
-DOI: 10.1007/978-3-031-93802-3_10
-Title: Integrating Graph Convolutional Networks for Web Traffic Prediction
-Abstract: Web traffic forecasting plays a crucial role in optimizing network resources, enhancing user experience, and ensuring efficient server load management...
-
-DOI: 10.1007/978-3-031-93257-1_6
-Title: Adaptive Web API Recommendation via Matching Service Clusters and Mashup Requirement
-Abstract: With the rapid proliferation of Web services and Web APIs, recommendation systems can effectively address the issue of information overload and allevi...
-
-DOI: 10.1007/978-3-032-02215-8_3
-Title: Leveraging Machine Learning Techniques for Customer Data Deduplication - Hard-Won Lessons from a Real-World Project in the Financial Industry
-Abstract: This paper is associated with a tutorial presented at DEXA 2025 Conferences and Workshops. The tutorial shares the practical experience gained from a ...
-
-DOI: 10.1007/978-3-031-95296-8_21
-Title: Intelligent Control System for Ore Transportation and Grinding Process in Gold Mining Fields
-Abstract: This paper is devoted to optimizing the processes of work using intellectual control systems for the transportation and grinding of ore in gold mining...
-
-DOI: 10.1007/978-3-032-02088-8_29
-Title: Benchmarking Embedding Techniques for Modeling User Navigation Behavior on Task-Oriented Software
-Abstract: Understanding user navigation patterns from clickstream data is crucial for improving business software, yet remains challenging due to the complexity...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[web usage mining] Total hasil: 90635
-DOI: 10.1007/978-3-031-90470-7_6
-Title: ‘Internet of Things’ and ‘Social Networking’: Containment
-Abstract: Moving to the post-2000 period, or the post-formation Internet Polity, this chapter begins with the implications of the internet becoming the centred ...
-
-DOI: 10.1007/978-3-032-00983-8_5
-Title: Survey on Data Mining and Machine Learning Methods Used in Analyzing Tweets
-Abstract: It is observed that the Mental illness by the actions and individual emotions and expressions towards a particular situation. It indicates that Americ...
-
-DOI: 10.1007/978-3-031-93802-3_7
-Title: Unveiling Power Laws in Graph Mining: Techniques and Applications in Graph Query Analysis
-Abstract: Power laws play a crucial role in understanding the structural and functional properties of real-world graphs, influencing various aspects of graph mi...
-
-DOI: 10.1007/978-3-032-02215-8_7
-Title: An Enhanced FP-Growth Algorithm with Hybrid Adaptive Support Threshold for Association Rule Mining
-Abstract: Finding frequent itemsets remains challenging due to manual threshold specification requirements in existing algorithms. This paper presents an Enhanc...
-
-DOI: 10.1007/978-3-031-93257-1_6
-Title: Adaptive Web API Recommendation via Matching Service Clusters and Mashup Requirement
-Abstract: With the rapid proliferation of Web services and Web APIs, recommendation systems can effectively address the issue of information overload and allevi...
-
-DOI: 10.1007/978-3-032-02088-8_29
-Title: Benchmarking Embedding Techniques for Modeling User Navigation Behavior on Task-Oriented Software
-Abstract: Understanding user navigation patterns from clickstream data is crucial for improving business software, yet remains challenging due to the complexity...
-
-DOI: 10.1007/978-3-032-01723-9_9
-Title: Analyzing Water Consumption Patterns in Mexico City: A GIS and Data Science Approach
-Abstract: Water scarcity in Mexico City has become an increasingly urgent issue, exacerbated by inefficient and unequal consumption patterns across its urban fa...
-
-DOI: 10.1007/978-981-96-6951-6_19
-Title: Research on Sensor Behavioral Psychological Health Based on Multi-task Learning
-Abstract: As society develops, mental health is becoming increasingly important. Traditional mental health assessment methods, such as face-to-face interviews a...
-
-DOI: 10.1007/978-3-031-89518-0_1
-Title: On the Centrality of Web Trackers: Assessing Its Potential for Automated Detection
-Abstract: For the past 20 years, web tracking has raised worries among privacy advocates and authorities responsible for data protection. Researchers have propo...
-
-DOI: 10.1007/978-3-032-02215-8_6
-Title: FNoDe: Faulty Node Detection in Microservices Architecture
-Abstract: As cloud services shift from monolithic architectures to microservices, post-failure fault and anomaly detection becomes increasingly challenging due ...
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">keyword</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">10</span>   <span class="c1"># jumlah hasil per query (maks 50 per request)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="p">}</span>
-<span class="ne">---&gt; </span><span class="mi">27</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
-<span class="sd">   (...)     70     :rtype: requests.Response</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/sessions.py:703,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/requests/adapters.py:667,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">timeout</span> <span class="o">=</span> <span class="n">TimeoutSauce</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">667</span>     <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>         <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>         <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>         <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>         <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>         <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">681</span> <span class="k">except</span> <span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:787,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="c1"># Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">787</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="c1"># Everything went great!</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:534,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="c1"># Receive the response from the server</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">534</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/urllib3/connection.py:565,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="n">_shutdown</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span> <span class="s2">&quot;shutdown&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="c1"># Get the response from http.client.HTTPConnection</span>
-<span class="ne">--&gt; </span><span class="mi">565</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="n">assert_header_parsing</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/http/client.py:1419,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1417</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1419</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1420</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1421</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/http/client.py:331,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="c1"># read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">331</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>         <span class="k">break</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/http/client.py:292,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">def</span><span class="w"> </span><span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">292</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/socket.py:707,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">707</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/ssl.py:1253,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1250</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1251</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1252</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1253</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/ssl.py:1105,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1103</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1105</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="simpan-hasil-ke-csv">
-<h2>Simpan Hasil ke CSV<a class="headerlink" href="#simpan-hasil-ke-csv" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Simpan hasil crawling ke CSV ---</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="k">if</span> <span class="s1">&#39;all_results&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">and</span> <span class="n">all_results</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_results</span><span class="p">)</span>
-    <span class="n">output_csv</span> <span class="o">=</span> <span class="s2">&quot;crawling_results.csv&quot;</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil crawling berhasil disimpan ke </span><span class="si">{</span><span class="n">output_csv</span><span class="si">}</span><span class="s2"> dengan </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> baris.&quot;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Belum ada hasil crawling. Pastikan sudah menjalankan proses crawling.&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_springer_articles</span><span class="p">():</span>
+    <span class="c1"># Silahkan membuat api key dari https://dev.springernature.com/#api</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;ce144a12624a303d0e0047e0bd6349a8&quot;</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.springernature.com/meta/v2/json&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;web mining,web usage mining&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
+        <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">10</span>  <span class="c1"># Jumlah artikel yang ingin diambil</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Siapkan dictionary untuk menampung data</span>
+    <span class="n">data_tabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;DOI&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;Title&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;Abstract&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Ini akan menampilkan error jika request gagal</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total hasil yang ditemukan: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[{}])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;total&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Mengisi dictionary dengan data dari API</span>
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">,</span> <span class="p">[]):</span>
+            <span class="n">data_tabel</span><span class="p">[</span><span class="s2">&quot;DOI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doi&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">))</span>
+            <span class="n">data_tabel</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;No title&#39;</span><span class="p">))</span>
+            
+            <span class="c1"># Mengambil abstrak dan membersihkannya dari tag HTML</span>
+            <span class="n">abstract_raw</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;No abstract&#39;</span><span class="p">)</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">abstract_raw</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            <span class="n">abstract_clean</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+            <span class="n">data_tabel</span><span class="p">[</span><span class="s2">&quot;Abstract&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abstract_clean</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error saat mengakses API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_tabel</span><span class="p">)</span> <span class="c1"># Mengembalikan DataFrame kosong jika error</span>
+
+    <span class="c1"># MEKANISME PENYIMPANAN DAN TAMPILAN OUTPUT</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_tabel</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;springer_articles.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># Menampilkan DataFrame</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Data Artikel dari Springer Nature ---&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Menjalankan fungsi dan menampilkan hasilnya</span>
+<span class="n">get_springer_articles</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Belum ada hasil crawling. Pastikan sudah menjalankan proses crawling.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total hasil yang ditemukan: 1276
+
+--- Data Artikel dari Springer Nature ---
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
-
-<span class="c1"># Nama file CSV yang ingin diunduh</span>
-<span class="n">output_csv_filename</span> <span class="o">=</span> <span class="s2">&quot;springer_crawling.csv&quot;</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">output_csv_filename</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File &#39;</span><span class="si">{</span><span class="n">output_csv_filename</span><span class="si">}</span><span class="s2">&#39; berhasil diunduh.&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File &#39;</span><span class="si">{</span><span class="n">output_csv_filename</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan. Pastikan file sudah dibuat.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-    async function download(id, filename, size) {
-      if (!google.colab.kernel.accessAllowed) {
-        return;
-      }
-      const div = document.createElement('div');
-      const label = document.createElement('label');
-      label.textContent = `Downloading "${filename}": `;
-      div.appendChild(label);
-      const progress = document.createElement('progress');
-      progress.max = size;
-      div.appendChild(progress);
-      document.body.appendChild(div);
-
-      const buffers = [];
-      let downloaded = 0;
-
-      const channel = await google.colab.kernel.comms.open(id);
-      // Send a message to notify the kernel that we're ready.
-      channel.send({})
-
-      for await (const message of channel.messages) {
-        // Send a message to notify the kernel that we're ready.
-        channel.send({})
-        if (message.buffers) {
-          for (const buffer of message.buffers) {
-            buffers.push(buffer);
-            downloaded += buffer.byteLength;
-            progress.value = downloaded;
-          }
-        }
-      }
-      const blob = new Blob(buffers, {type: 'application/binary'});
-      const a = document.createElement('a');
-      a.href = window.URL.createObjectURL(blob);
-      a.download = filename;
-      div.appendChild(a);
-      a.click();
-      div.remove();
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
-  </script><script type="application/javascript">download("download_8e77378c-52c4-4e7a-891c-fa0f3e02ec6b", "springer_crawling.csv", 40417)</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File &#39;springer_crawling.csv&#39; berhasil diunduh.
-</pre></div>
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DOI</th>
+      <th>Title</th>
+      <th>Abstract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.1007/s11301-025-00551-3</td>
+      <td>Combined use of web scraping and AI-based mode...</td>
+      <td>Online data are instrumental in knowledge gene...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.1007/s41060-024-00659-x</td>
+      <td>Sequential pattern mining algorithms and their...</td>
+      <td>Sequential pattern mining (SPM) is a useful to...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.1007/s41060-023-00483-9</td>
+      <td>Artificial intelligence trend analysis in Germ...</td>
+      <td>Current research on trend detection in artific...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.1007/s10586-025-05382-1</td>
+      <td>Task offloading for multi-UAV asset edge compu...</td>
+      <td>Mobile Edge Computing (MEC) addresses the dema...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.1007/s42979-025-04141-8</td>
+      <td>Taxonomy of Opinion Mining, Approaches and Dom...</td>
+      <td>Opinion Mining (OM), or Sentiment Analysis (SA...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>10.1007/s10462-025-11203-z</td>
+      <td>Web Intelligence (WI) 3.0: in search of a bett...</td>
+      <td>Over the past two decades, Web Intelligence (W...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10.1007/s42979-025-03942-1</td>
+      <td>A Contemporary Framework for Detection of Phis...</td>
+      <td>In today’s digital age, phishing is a signific...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10.1007/s41471-025-00208-7</td>
+      <td>Collecting and Analyzing User-Generated Conten...</td>
+      <td>User-generated content (UGC) is generally unde...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10.1007/s11227-025-06997-2</td>
+      <td>Mining transactional tree databases under home...</td>
+      <td>A key task in mining tree-structured data is f...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10.1038/s44183-025-00104-x</td>
+      <td>Major data gaps and recommendations in monitor...</td>
+      <td>Marine Protected Areas (MPAs) play a central r...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
-</section>
-<section id="id1">
-<h2>Simpan Hasil ke CSV<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Kode di sel ini bertanggung jawab untuk melakukan crawling data dari API Springer Nature berdasarkan daftar kata kunci yang telah ditentukan dan menyimpannya ke dalam file CSV lokal.</p>
-<p><strong>Langkah-langkah yang dilakukan:</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Import Library:</strong> Mengimpor library <code class="docutils literal notranslate"><span class="pre">requests</span></code> untuk membuat permintaan HTTP ke API dan <code class="docutils literal notranslate"><span class="pre">csv</span></code> untuk bekerja dengan file CSV.</p></li>
-<li><p><strong>Inisialisasi Variabel:</strong> Menentukan API Key Springer Anda, daftar kata kunci yang akan dicari, dan URL endpoint API.</p></li>
-<li><p><strong>Membuat File CSV:</strong> Membuka (atau membuat jika belum ada) file CSV bernama <code class="docutils literal notranslate"><span class="pre">springer_crawling.csv</span></code> dalam mode tulis (<code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code>). <code class="docutils literal notranslate"><span class="pre">newline=&quot;&quot;</span></code> mencegah penambahan baris kosong di antara baris, dan <code class="docutils literal notranslate"><span class="pre">encoding=&quot;utf-8&quot;</span></code> memastikan karakter khusus dapat ditangani dengan benar.</p></li>
-<li><p><strong>Menulis Header CSV:</strong> Menulis baris header ke file CSV, yang akan menjadi nama kolom data (keyword, doi, title, abstract).</p></li>
-<li><p><strong>Loop Kata Kunci:</strong> Mengiterasi melalui setiap kata kunci dalam daftar <code class="docutils literal notranslate"><span class="pre">keywords</span></code>.</p></li>
-<li><p><strong>Membuat Permintaan API:</strong> Untuk setiap kata kunci, membuat dictionary <code class="docutils literal notranslate"><span class="pre">params</span></code> yang berisi parameter query (kata kunci, API key, dan jumlah hasil per halaman <code class="docutils literal notranslate"><span class="pre">p</span></code>). Kemudian, menggunakan <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> untuk mengirim permintaan GET ke API Springer.</p></li>
-<li><p><strong>Memeriksa Status Respon:</strong> Memeriksa apakah status kode respon adalah 200 (OK). Jika ya, ini berarti permintaan berhasil.</p></li>
-<li><p><strong>Memproses Data Hasil:</strong> Jika permintaan berhasil, mengurai respon JSON menjadi dictionary Python. Mengakses total hasil dari data.</p></li>
-<li><p><strong>Menyimpan ke CSV:</strong> Mengiterasi melalui setiap <code class="docutils literal notranslate"><span class="pre">record</span></code> (artikel/publikasi) dalam respon data. Mengekstrak informasi seperti DOI, judul, dan abstrak. Menggunakan <code class="docutils literal notranslate"><span class="pre">writer.writerow()</span></code> untuk menulis baris data ke file CSV.</p></li>
-<li><p><strong>Menampilkan Hasil (Opsional):</strong> Mencetak informasi DOI, judul, dan sebagian abstrak ke konsol untuk memantau proses.</p></li>
-<li><p><strong>Menangani Error:</strong> Jika status kode respon bukan 200, mencetak pesan error.</p></li>
-</ol>
-<p>Setelah sel ini selesai dieksekusi, Anda akan memiliki file <code class="docutils literal notranslate"><span class="pre">springer_crawling.csv</span></code> yang berisi data hasil crawling untuk setiap kata kunci.</p>
 </section>
 </section>
 
@@ -957,6 +646,15 @@ Abstract: As cloud services shift from monolithic architectures to microservices
         <p class="prev-next-title">Pengantar Web Mining</p>
       </div>
     </a>
+    <a class="right-next"
+       href="crawling%20page.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">crawling page</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -973,9 +671,8 @@ Abstract: As cloud services shift from monolithic architectures to microservices
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-melakukan-crawling">tugas melakukan crawling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-mengerjakan">Langkah-langkah mengerjakan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-hasil-ke-csv">Simpan Hasil ke CSV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Simpan Hasil ke CSV</a></li>
 </ul>
   </nav></div>
 
