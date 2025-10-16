@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>crawling page &#8212; My sample book</title>
+    <title>crawling halaman web &#8212; My sample book</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'crawling page';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Klasifikasi LDA" href="Klasifikasi%20LDA.html" />
     <link rel="prev" title="crawling" href="Web%20Crawling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,7 +182,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Pengantar%20Web%20Mining.html">Pengantar Web Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Web%20Crawling.html">crawling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">crawling page</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">crawling halaman web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%20LDA.html">Klasifikasi LDA</a></li>
 </ul>
 
     </div>
@@ -367,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>crawling page</h1>
+    <h1>crawling halaman web</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,14 +384,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-link-data-text">Crawling Link data text</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-semua-judul-dan-informasi-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">kode untuk mengambil semua judul dan informasi diperlukan dari judul itu yang ada di pta.trunojoyo.ac.id dan khusus untuk fakultas teknik</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-berita-dari-sebuah-website">kode untuk mengambil berita dari sebuah website</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-semua-judul-dan-informasi-yand-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">kode untuk mengambil semua judul dan informasi yand diperlukan dari judul itu yang ada di pta.trunojoyo.ac.id dan khusus untuk fakultas teknik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-berita-dari-sebuah-website-berita">kode untuk mengambil berita dari sebuah website berita</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-uuntuk-mengambil-semua-link-yang-ada-di-sebuah-website-dan-mencari-lagi-semua-link-yang-ada-di-dalamnya-smpai-semua-telah-terjelajahi">kode uuntuk mengambil semua link yang ada di sebuah website dan mencari lagi semua link yang ada di dalamnya smpai semua telah terjelajahi</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukann-praprosess-data-teks">melakukann praprosess data teks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-proses-untuk-isi-berita">pra proses untuk isi berita</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praproses-untuk-abstrak-pta">praproses untuk abstrak pta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-tfidf-dan-word-embedding-ntuk-berita-yang-telah-di-bersihkan">melakukan tfidf dan word embedding ntuk berita yang telah di bersihkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-tf-idf-pada-data-berita">Melakukan TF-IDF pada Data Berita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-word-embedding-menggunakan-rata-rata-word2vec">Melakukan Word Embedding (menggunakan rata-rata Word2Vec)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-data-dan-perbandingan-hasil">Klasifikasi Data dan Perbandingan Hasil</a></li>
 </ul>
 </li>
 </ul>
@@ -403,8 +408,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="crawling-page">
-<h1>crawling page<a class="headerlink" href="#crawling-page" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-halaman-web">
+<h1>crawling halaman web<a class="headerlink" href="#crawling-halaman-web" title="Link to this heading">#</a></h1>
 <section id="melakukan-crawling-dari-beberapa-halaman-web">
 <h2>melakukan crawling dari beberapa halaman web<a class="headerlink" href="#melakukan-crawling-dari-beberapa-halaman-web" title="Link to this heading">#</a></h2>
 <section id="kode-untuk-mellihhat-arsitektur-struktur-halaman-web">
@@ -422,7 +427,7 @@ document.write(`
 Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from builtwith) (1.17.0)
 Building wheels for collected packages: builtwith
   Building wheel for builtwith (setup.py) ... ?25l?25hdone
-  Created wheel for builtwith: filename=builtwith-1.3.4-py3-none-any.whl size=36077 sha256=31934737992a5d70ecf64f784f53026390c6e7b463c9d4dc3181a8f5857652c9
+  Created wheel for builtwith: filename=builtwith-1.3.4-py3-none-any.whl size=36077 sha256=66440497a57e57cc65b536d1b40333352a6044a20c6befc53fdff9433406230b
   Stored in directory: /root/.cache/pip/wheels/7f/2d/b2/606e3df914d4aeeab99c4a4e3e9a61673d2293c2e346db00c8
 Successfully built builtwith
 Installing collected packages: builtwith
@@ -508,11 +513,11 @@ URL: #  | Teks:
 URL: #  | Teks:   
 URL: #  | Teks:   
 URL: # | Teks: Tentang
-URL: https://www2.trunojoyo.ac.id/index.php/sejarahutm/ | Teks: Sejarah
+URL: https://www2.trunojoyo.ac.id/sejarahutm/ | Teks: Sejarah
 URL: https://www2.trunojoyo.ac.id/index.php/profil-singkat/ | Teks: Profil Singkat
-URL: https://www2.trunojoyo.ac.id/index.php/visimisi/ | Teks: Visi dan Misi
-URL: https://www2.trunojoyo.ac.id/index.php/lhm/ | Teks: Logo, Hymne dan Mars
-URL: https://www2.trunojoyo.ac.id/index.php/organ-utm/ | Teks: Organisasi UTM
+URL: https://www2.trunojoyo.ac.id/visimisi/ | Teks: Visi dan Misi
+URL: https://www2.trunojoyo.ac.id/lhm/ | Teks: Logo, Hymne dan Mars
+URL: https://www2.trunojoyo.ac.id/organ-utm/ | Teks: Organisasi UTM
 URL: # | Teks: Alumni
 URL: # | Teks: Kelembagaan
 URL: # | Teks: Fakultas
@@ -541,19 +546,19 @@ URL: # | Teks: UPA. Sertifikasi
 URL: https://labterpadu.trunojoyo.ac.id/ | Teks: UPA. Laboratorium Terpadu
 URL: # | Teks: UPA. Pengembangan Karier dan Kewirausahaan
 URL: # | Teks: Data
-URL: https://www2.trunojoyo.ac.id/index.php/data-penelitian-2/ | Teks: Data Penelitian
+URL: https://www2.trunojoyo.ac.id/data-penelitian-2/ | Teks: Data Penelitian
 URL: # | Teks: Data Pengabdian Kepada Masyarakat
-URL: https://www2.trunojoyo.ac.id/index.php/data-kerjasama/ | Teks: Data Kerjasama
+URL: https://www2.trunojoyo.ac.id/data-kerjasama/ | Teks: Data Kerjasama
 URL: # | Teks: Admisi
 URL: # | Teks: SNPMB
 URL: # | Teks: Mandiri
 URL: # | Teks: RPL
 URL: # | Teks: Dokumen
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
+URL: https://www2.trunojoyo.ac.id/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
+URL: https://www2.trunojoyo.ac.id/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
+URL: https://www2.trunojoyo.ac.id/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
+URL: https://www2.trunojoyo.ac.id/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
+URL: https://www2.trunojoyo.ac.id/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
 URL: https://ppid.trunojoyo.ac.id | Teks: PPID
 URL: mailto:support.industrie@gmail.com | Teks: 
 
@@ -572,17 +577,12 @@ WA. +62811-3333-0046
 
 URL: https://www.trunojoyo.ac.id/ | Teks: 
  
-URL: https://drive.google.com/drive/folders/1G8tmMYJ6S58BtzwRP9V_78XkNOl3aR8y?usp=sharing | Teks: 
-
- 
-Download Center
-
 URL: # | Teks: Tentang 
-URL: https://www2.trunojoyo.ac.id/index.php/sejarahutm/ | Teks: Sejarah
+URL: https://www2.trunojoyo.ac.id/sejarahutm/ | Teks: Sejarah
 URL: https://www2.trunojoyo.ac.id/index.php/profil-singkat/ | Teks: Profil Singkat
-URL: https://www2.trunojoyo.ac.id/index.php/visimisi/ | Teks: Visi dan Misi
-URL: https://www2.trunojoyo.ac.id/index.php/lhm/ | Teks: Logo, Hymne dan Mars
-URL: https://www2.trunojoyo.ac.id/index.php/organ-utm/ | Teks: Organisasi UTM
+URL: https://www2.trunojoyo.ac.id/visimisi/ | Teks: Visi dan Misi
+URL: https://www2.trunojoyo.ac.id/lhm/ | Teks: Logo, Hymne dan Mars
+URL: https://www2.trunojoyo.ac.id/organ-utm/ | Teks: Organisasi UTM
 URL: # | Teks: Alumni
 URL: # | Teks: Kelembagaan 
 URL: # | Teks: Fakultas 
@@ -611,102 +611,107 @@ URL: # | Teks: UPA. Sertifikasi
 URL: https://labterpadu.trunojoyo.ac.id/ | Teks: UPA. Laboratorium Terpadu
 URL: # | Teks: UPA. Pengembangan Karier dan Kewirausahaan
 URL: # | Teks: Data 
-URL: https://www2.trunojoyo.ac.id/index.php/data-penelitian-2/ | Teks: Data Penelitian
+URL: https://www2.trunojoyo.ac.id/data-penelitian-2/ | Teks: Data Penelitian
 URL: # | Teks: Data Pengabdian Kepada Masyarakat
-URL: https://www2.trunojoyo.ac.id/index.php/data-kerjasama/ | Teks: Data Kerjasama
+URL: https://www2.trunojoyo.ac.id/data-kerjasama/ | Teks: Data Kerjasama
 URL: # | Teks: Admisi 
 URL: # | Teks: SNPMB
 URL: # | Teks: Mandiri
 URL: # | Teks: RPL
 URL: # | Teks: Dokumen 
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
-URL: https://www2.trunojoyo.ac.id/index.php/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
+URL: https://www2.trunojoyo.ac.id/dokumen-penelitian-pengabdian/ | Teks: Dokumen Penelitian &amp; Pengabdian
+URL: https://www2.trunojoyo.ac.id/dokumen-sarana-prasarana/ | Teks: Dokumen Sarana &amp; Prasarana
+URL: https://www2.trunojoyo.ac.id/dokumen-standar-pelayanan/ | Teks: Dokumen Standar Pelayanan
+URL: https://www2.trunojoyo.ac.id/dokumen-sumber-daya-manusia/ | Teks: Dokumen Sumber Daya Manusia
+URL: https://www2.trunojoyo.ac.id/dokumen-tata-pamong/ | Teks: Dokumen Tata Pamong
 URL: https://ppid.trunojoyo.ac.id | Teks: PPID
+URL: https://drive.google.com/drive/folders/1G8tmMYJ6S58BtzwRP9V_78XkNOl3aR8y?usp=sharing | Teks: 
+
+ 
+Download Center
+
 URL: https://industrie.rstheme.com/laboratory/about/ | Teks: 
 Selengkapnya 
 									
   
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/09/09/prodi-pendidikan-informatika-utm-sukses-selenggarakan-national-conference-on-informatics-education-perdana/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/isotonic-bittern-bukti-nyata-hilirisasi-garam-madura-hasil-kolaborasi-prodi-psda-dan-lppm-utm/ | Teks: 
  
 
 
 
-								09 Sep 2025							
+								18 Sep 2025							
 
 
 									Headlines									
 
-Prodi Pendidikan Informatika UTM Sukses Selenggarakan National Conference on Informatics Education Perdana
+“Isotonic Bittern” Bukti Nyata Hilirisasi Garam Madura Hasil Kolaborasi Prodi PSDA dan LPPM UTM
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/24/universitas-trunojoyo-madura-kukuhkan-994-wisudawan-pada-sesi-kedua-wisuda-ke-39/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/pelatihan-peer-counselor-universitas-trunojoyo-madura-ciptakan-ruang-aman-dan-sehat-bagi-mahasiswa/ | Teks: 
  
 
 
 
-								24 Agu 2025							
+								18 Sep 2025							
+
+
+									Kegiatan									
+
+PELATIHAN PEER COUNSELOR: UNIVERSITAS TRUNOJOYO MADURA CIPTAKAN RUANG AMAN DAN SEHAT BAGI MAHASISWA
+
+
+URL: https://www2.trunojoyo.ac.id/pascasarjana-utm-gelar-stadium-general-perkuat-komitmen-cetak-sdm-unggul-dalam-riset-inovasi-dan-teknologi/ | Teks: 
+ 
+
+
+
+								17 Sep 2025							
 
 
 									Headlines									
 
-Universitas Trunojoyo Madura Kukuhkan 994 Wisudawan pada Sesi Kedua Wisuda ke-39
+Pascasarjana UTM Gelar Stadium General: Perkuat Komitmen Cetak SDM Unggul dalam Riset, Inovasi, dan Teknologi
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/23/rapat-senat-terbuka-dalam-rangka-wisuda-ke-xxxix-987-lulusan-dikukuhkan-pada-sesi-hari-pertama/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/keanekaragaman-hayati-perairan-sampang-jadi-fokus-riset-utm-dan-petronas-melalui-program-fish-shelter/ | Teks: 
  
 
 
 
-								23 Agu 2025							
-
-
-									Headlines									
-
-Rapat Senat Terbuka dalam Rangka Wisuda ke-XXXIX, 987 Lulusan Dikukuhkan pada Sesi Hari Pertama
-
-
-URL: https://www2.trunojoyo.ac.id/index.php/2025/09/04/utm-lepas-jamaah-penerima-hadiah-umroh-wujud-syukur-dies-natalis-ke-24/ | Teks: 
- 
-
-
-
-								04 Sep 2025							
+								23 Sep 2025							
 
 
 									Berita									
 
-UTM Lepas Jamaah Penerima Hadiah Umroh, Wujud Syukur Dies Natalis ke-24
+KEANEKARAGAMAN HAYATI PERAIRAN SAMPANG JADI FOKUS RISET UTM DAN PETRONAS MELALUI PROGRAM FISH SHELTER
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/29/utm-raih-penghargaan-entrepreneurial-marketing-campus-for-impact-dari-markplus-institute-dan-mcorp/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/utm-mantapkan-komitmen-layanan-publik-melalui-audit-iso-90012015/ | Teks: 
  
 
 
 
-								29 Agu 2025							
+								19 Sep 2025							
 
 
 									Berita									
 
-UTM Raih Penghargaan Entrepreneurial Marketing Campus For Impact dari Markplus Institute dan MCORP
+UTM Mantapkan Komitmen Layanan Publik Melalui Audit ISO 9001:2015
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/04/utm-canangkan-green-campus-menko-ahy-tanam-pohon-eboni-di-samping-warisan-sang-ayah/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/utm-kenalkan-konsep-pemrograman-kepada-siswa-sd-melalui-pelatihan-unplugged-coding-bersama-mahasiswa-universitas-palacky/ | Teks: 
  
 
 
 
-								04 Agu 2025							
+								19 Sep 2025							
 
 
 									Berita									
 
-UTM Canangkan Green Campus, Menko AHY Tanam Pohon Eboni di Samping Warisan Sang Ayah
+UTM KENALKAN KONSEP PEMROGRAMAN KEPADA SISWA SD MELALUI PELATIHAN UNPLUGGED CODING BERSAMA MAHASISWA UNIVERSITAS PALACKY
 
 
 URL: https://www2.trunojoyo.ac.id/index.php/halber/ | Teks: 
@@ -715,7 +720,20 @@ More
   
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/20/pengumuman-penerima-bantuan-keringanan-uang-kuliah-tunggal-bagi-mahasiswa-universitas-trunojoyo-madura-berupa-pembebasan-dan-uang-kuliah-tunggal-50-semester-gasal-tahap-ii-tahun-akademik-2025-2026/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/pengumuman-pengembalian-kelebihan-pembayaran-uang-kuliah-tunggalbagi-mahasiswa-semester-gasal-tahun-akademik-2025-2026/ | Teks: 
+ 
+
+
+
+								23 Sep 2025							
+
+
+									Headlines									
+
+PENGUMUMAN PENGEMBALIAN KELEBIHAN PEMBAYARAN UANG KULIAH TUNGGALBAGI MAHASISWA SEMESTER GASAL TAHUN AKADEMIK 2025/2026
+
+
+URL: https://www2.trunojoyo.ac.id/pengumuman-penerima-bantuan-keringanan-uang-kuliah-tunggal-bagi-mahasiswa-universitas-trunojoyo-madura-berupa-pembebasan-dan-uang-kuliah-tunggal-50-semester-gasal-tahap-ii-tahun-akademik-2025-2026/ | Teks: 
  
 
 
@@ -728,7 +746,7 @@ URL: https://www2.trunojoyo.ac.id/index.php/2025/08/20/pengumuman-penerima-bantu
 PENGUMUMAN PENERIMA BANTUAN KERINGANAN UANG KULIAH TUNGGAL BAGI MAHASISWA UNIVERSITAS TRUNOJOYO MADURA BERUPA PEMBEBASAN DAN  UANG KULIAH TUNGGAL 50% SEMESTER GASAL TAHAP II  TAHUN AKADEMIK 2025/2026
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/19/pengumuman-jadwal-wisuda-xxxix-tahun-2025/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/pengumuman-jadwal-wisuda-xxxix-tahun-2025/ | Teks: 
  
 
 
@@ -741,62 +759,49 @@ URL: https://www2.trunojoyo.ac.id/index.php/2025/08/19/pengumuman-jadwal-wisuda-
 PENGUMUMAN JADWAL WISUDA XXXIX TAHUN 2025
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/14/pengumuman-penerima-bantuan-keringanan-uang-kuliah-tunggal-bagi-mahasiswa-universitas-trunojoyo-madura-berupa-pembebasan-dan-uang-kuliah-tunggal-50-semester-gasal-tahun-akademik-2025-2026/ | Teks: 
- 
-
-
-
-								14 Agu 2025							
-
-
-									Headlines									
-
-PENGUMUMAN PENERIMA BANTUAN KERINGANAN UANG KULIAH TUNGGAL BAGI MAHASISWA UNIVERSITAS TRUNOJOYO MADURA BERUPA PEMBEBASAN DAN  UANG KULIAH TUNGGAL 50% SEMESTER GASAL  TAHUN AKADEMIK 2025/2026
-
-
 URL: https://www2.trunojoyo.ac.id/index.php/halinformasi/ | Teks: 
 More 
 									
   
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/09/09/prodi-pendidikan-informatika-utm-sukses-selenggarakan-national-conference-on-informatics-education-perdana/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/isotonic-bittern-bukti-nyata-hilirisasi-garam-madura-hasil-kolaborasi-prodi-psda-dan-lppm-utm/ | Teks: 
  
 
 
 
-								09 Sep 2025							
+								18 Sep 2025							
 
 
 									Headlines									
 
-Prodi Pendidikan Informatika UTM Sukses Selenggarakan National Conference on Informatics Education Perdana
+“Isotonic Bittern” Bukti Nyata Hilirisasi Garam Madura Hasil Kolaborasi Prodi PSDA dan LPPM UTM
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/24/universitas-trunojoyo-madura-kukuhkan-994-wisudawan-pada-sesi-kedua-wisuda-ke-39/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/pelatihan-peer-counselor-universitas-trunojoyo-madura-ciptakan-ruang-aman-dan-sehat-bagi-mahasiswa/ | Teks: 
  
 
 
 
-								24 Agu 2025							
+								18 Sep 2025							
 
 
-									Headlines									
+									Kegiatan									
 
-Universitas Trunojoyo Madura Kukuhkan 994 Wisudawan pada Sesi Kedua Wisuda ke-39
+PELATIHAN PEER COUNSELOR: UNIVERSITAS TRUNOJOYO MADURA CIPTAKAN RUANG AMAN DAN SEHAT BAGI MAHASISWA
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/2025/08/23/rapat-senat-terbuka-dalam-rangka-wisuda-ke-xxxix-987-lulusan-dikukuhkan-pada-sesi-hari-pertama/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/pascasarjana-utm-gelar-stadium-general-perkuat-komitmen-cetak-sdm-unggul-dalam-riset-inovasi-dan-teknologi/ | Teks: 
  
 
 
 
-								23 Agu 2025							
+								17 Sep 2025							
 
 
 									Headlines									
 
-Rapat Senat Terbuka dalam Rangka Wisuda ke-XXXIX, 987 Lulusan Dikukuhkan pada Sesi Hari Pertama
+Pascasarjana UTM Gelar Stadium General: Perkuat Komitmen Cetak SDM Unggul dalam Riset, Inovasi, dan Teknologi
 
 
 URL: https://www2.trunojoyo.ac.id/index.php/halaman-kegiatan/ | Teks: 
@@ -812,41 +817,41 @@ Data Lengkap
   
 
 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/safi/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/safi/ | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/safi/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/safi/ | Teks: 
 											
 											Prof. Dr. Safi’, S.H., M.H.
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/lawrence-peter/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/lawrence-peter/ | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/lawrence-peter/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/lawrence-peter/ | Teks: 
 											
 											Prof. Dr. Achmad Amzeri, S.P., M.P.
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/bradley-roy/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/bradley-roy/ | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/bradley-roy/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/bradley-roy/ | Teks: 
 											
 											Ir. Ari Basuki, S.T., M.T.
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/john-maxwell/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/john-maxwell/ | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
 URL: # | Teks: 
-URL: https://www2.trunojoyo.ac.id/index.php/teams/john-maxwell/ | Teks: 
+URL: https://www2.trunojoyo.ac.id/teams/john-maxwell/ | Teks: 
 											
 											Surokim, S.Sos., S.H., M.Si.
 URL: # | Teks: 
@@ -884,8 +889,8 @@ X-twitter
 </div>
 </div>
 </div>
-<section id="kode-untuk-mengambil-semua-judul-dan-informasi-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">
-<h3>kode untuk mengambil semua judul dan informasi diperlukan dari judul itu yang ada di <a class="reference external" href="http://pta.trunojoyo.ac.id">pta.trunojoyo.ac.id</a> dan khusus untuk fakultas teknik<a class="headerlink" href="#kode-untuk-mengambil-semua-judul-dan-informasi-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik" title="Link to this heading">#</a></h3>
+<section id="kode-untuk-mengambil-semua-judul-dan-informasi-yand-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">
+<h3>kode untuk mengambil semua judul dan informasi yand diperlukan dari judul itu yang ada di <a class="reference external" href="http://pta.trunojoyo.ac.id">pta.trunojoyo.ac.id</a> dan khusus untuk fakultas teknik<a class="headerlink" href="#kode-untuk-mengambil-semua-judul-dan-informasi-yand-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>requests
@@ -983,8 +988,12 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/soupsieve/css_parser.py:876: FutureWarning: The pseudo class &#39;:contains&#39; is deprecated, &#39;:-soup-contains&#39; should be used moving forward.
+  warnings.warn(  # noqa: B028
+</pre></div>
+</div>
 <div class="output text_html">
-  <div id="df-a3a12b67-b5bf-4fb4-8c65-a1037c36b8a4" class="colab-df-container">
+  <div id="df-67f83688-e307-498f-8d4a-18ee87ecd40f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1016,52 +1025,52 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
     <tr>
       <th>0</th>
       <td>Siliwangi Fitra Rachmawanto S.T.</td>
-      <td>OPTIMASI PEMILIHAN PORTOFOLIO SAHAM PERUSAHAAN SEKTOR TAMBANG DENGAN MENGGUNAKAN GOAL PROGRAMMING</td>
+      <td>OPTIMASI PEMILIHAN PORTOFOLIO SAHAM PERUSAHAAN...</td>
       <td>Heri Awalul Ilhamsah S.T., M.T.</td>
       <td>Retno Indriartiningtias S.T., M.T.</td>
-      <td>Portofolio adalah sekumpulan saham yang dimiliki investor. Dalam setiap saham pada portofolio memiliki resiko yang harus diminimalkan dengan cara diversifikasi yaitu dengan mengalokasikan dana pad...</td>
+      <td>Portofolio adalah sekumpulan saham yang dimili...</td>
       <td>Teknik Industri</td>
-      <td>Portofolio is a collection of stock owned by investors. In every stock on the portofolio have risk must be minimized by diversification to allocate funds on a variety of investments alternative at...</td>
+      <td>Portofolio is a collection of stock owned by i...</td>
     </tr>
     <tr>
       <th>1</th>
       <td>AHMAD MAS'UD</td>
-      <td>PERANCANGAN TATA LETAK FASILITAS LANTAI PRODUKSI PT. ABC MENGGUNAKAN MEDOTE SYSTEMATIC LAYOUT PLANNING (SLP) DAN ALGORITMA GENETIK</td>
+      <td>PERANCANGAN TATA LETAK FASILITAS LANTAI PRODUK...</td>
       <td>SABARUDIN AKHMAD, S.T., M.T.</td>
       <td>SUGENG PURWOKO, S.T., M.T.</td>
-      <td>PT. ABC merupakan perusahaan yang bergerak dibidang manufaktur kayu yaitu memproduksi meja, kursi dan lain-lain. Terdapat berbagai jenis mesin yang berada dalam lantai produksi PT. ABC untuk menun...</td>
+      <td>PT. ABC merupakan perusahaan yang bergerak dib...</td>
       <td>Teknik Industri</td>
-      <td>PT. ABC is a company engaged in the manufacture of wood that produces tables, chairs and others. There are different types of machines that are in production floor of PT. ABC to support the course...</td>
+      <td>PT. ABC is a company engaged in the manufactur...</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Yulianto Fauzanta</td>
-      <td>PERUMUSAN STRATEGI BISNIS UD. BUDI JAYA BANGKALAN ?DENGAN PENDEKATAN MODEL FRED R. DAVID</td>
+      <td>PERUMUSAN STRATEGI BISNIS UD. BUDI JAYA BANGKA...</td>
       <td>Fitri Agustina, S.T., M.T</td>
       <td>Retno Indriartiningtias, S.T., M.T</td>
-      <td>Bangkalan merupakan salah satu kabupaten yang memiliki potensi alam salak. ?Potensi alam tersebut dimanfaatkan oleh UD. Budi Jaya yang terletak di Desa ?Kramat? Bangkalan dengan memproduksi produk...</td>
+      <td>Bangkalan merupakan salah satu kabupaten yang ...</td>
       <td>Teknik Industri</td>
-      <td>Bangkalan is one of the districts that have the potential of natural bark. Natural ?potential use by UD. Budi Jaya is located in the village of Kramat Bangkalan to ?produce refined products barked...</td>
+      <td>Bangkalan is one of the districts that have th...</td>
     </tr>
     <tr>
       <th>3</th>
       <td>M Mundir Muhlisin</td>
-      <td>USULAN PERBAIKAN UTILITAS RESOURCES PADA LANTAI PRODUKSI PT INDOSPRING TBK DENGAN PENDEKATAN SIMULASI</td>
+      <td>USULAN PERBAIKAN UTILITAS RESOURCES PADA LANTA...</td>
       <td>Mu'alim ST MT</td>
       <td>Sugeng Purwoko ST MT</td>
-      <td>Simulasi adalah duplikasi atau abstraksi dari persoalan dalam kehidupan nyata ke dalam model matematika. Berdasarkan hasil survey pendahuluan di lantai produksi PT Indospring tbk masih sering terj...</td>
+      <td>Simulasi adalah duplikasi atau abstraksi dari ...</td>
       <td>Teknik Industri</td>
-      <td>Simulation is a duplication or abstraction of real-life problems into mathematical models. Based on the results of a preliminary survey on the production floor PT Indospring tbk is often not optim...</td>
+      <td>Simulation is a duplication or abstraction of ...</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Muhibbin</td>
-      <td>Peningkatan Kepuasan Masyarakat Terhadap Pelayanan Aparatur Kepolisian dengan Menggunakan Integrasi Importance Performance Analysis (IPA) dan Model Kano\r\n(Studi Kasus pada Bagian Pengurusan Sura...</td>
+      <td>Peningkatan Kepuasan Masyarakat Terhadap Pelay...</td>
       <td>Rahmad Hidayat</td>
       <td>Retno Indriartiningtias</td>
-      <td>Kepuasan adalah tingkat perasaan seseorang terhadap pelayanan setelah membandingkan antara kinerja dengan harapan yang diinginkan. Dalam penelitian ini dilakukan studi kualitas layanan dalam menin...</td>
+      <td>Kepuasan adalah tingkat perasaan seseorang ter...</td>
       <td>Teknik Industri</td>
-      <td>Satisfaction is feeling level of someone to service after comparing between performance on the chance of which wanted. This research is done service quality study in to increase social satisfactio...</td>
+      <td>Satisfaction is feeling level of someone to se...</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1076,12 +1085,12 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
     <tr>
       <th>99</th>
       <td>MOH TAUFIK HIDAYAT</td>
-      <td>ALAT PENGGULUNG UNTUK MENGATUR KERAPATAN KERTAS DENGAN METODE CASCADE FUZZY- PID</td>
+      <td>ALAT PENGGULUNG UNTUK MENGATUR KERAPATAN KERTA...</td>
       <td>FAIKUL UMAM., S.KOM., M.T</td>
       <td>SRI WAHYUNI., S.KOM., M.T</td>
-      <td>ABSTRAK\n\nKertas merupakan kebutuhan yang dibutuhkan manusia pada saat ini terutama pada perindustrian, perkantoran dan pendidikan. Salah satu produk olahan yang diproses pada pabrik adalah kerta...</td>
+      <td>ABSTRAK\n\nKertas merupakan kebutuhan yang dib...</td>
       <td>Teknik Mekatronika</td>
-      <td>ABSTRACT\n\nPaper is a necessity needed by humans at this time, especially in industry, offices and education. One of the processing products processed at the factory is paper in the form of rolls...</td>
+      <td>ABSTRACT\n\nPaper is a necessity needed by hum...</td>
     </tr>
     <tr>
       <th>100</th>
@@ -1089,39 +1098,39 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
       <td>Optimasi Penguapan Air Laut Tua Pada Rumah Kaca</td>
       <td>Hairil Budiarto, S.T., M.T.</td>
       <td>Faikul Umam, S.Kom., M.T.</td>
-      <td>Pembuatan garam di Madura umumnya dilakukan dengan cara pemanasan air laut menggunakan sinar matahari. Proses itu mulai dari menampung air laut pada sebuah tambak kemudian diendapkan selama 2 ming...</td>
+      <td>Pembuatan garam di Madura umumnya dilakukan de...</td>
       <td>Teknik Mekatronika</td>
-      <td>Making salt in Madura is generally done by heating sea water using sunlight. The process starts from storing sea water in a pond and then deposited for 2 weeks to become old sea water that is read...</td>
+      <td>Making salt in Madura is generally done by hea...</td>
     </tr>
     <tr>
       <th>101</th>
       <td>ADINDA DEBTIANA DWIKA HILDA</td>
-      <td>KESTABILAN KECEPATAN MOBILE ROBOT PADA LINTASAN MENDATAR, TANJAKAN SERTA TURUNAN</td>
+      <td>KESTABILAN KECEPATAN MOBILE ROBOT PADA LINTASA...</td>
       <td>Faikul Umam, S.Kom., M.T.</td>
       <td>Sri Wahyuni, S.Kom., M.T.</td>
-      <td>Mobile robot merupakan salah satu kategori robot yang memiliki fungsi untuk berpindah tempat. Pengembangan dari mobile robot yaitu implementasi perubahan lintasan mendatar¸ tanjakan serta turunan....</td>
+      <td>Mobile robot merupakan salah satu kategori rob...</td>
       <td>Teknik Mekatronika</td>
-      <td>Mobile robot is one of the robot categories that has the function to move places. The development of a mobile robot is the implementation of changes in leveling and descending trajectories. When t...</td>
+      <td>Mobile robot is one of the robot categories th...</td>
     </tr>
     <tr>
       <th>102</th>
       <td>Nafizatul Jamilah</td>
-      <td>Rancang Bangun Sistem Otomasi Robot Pengecatan Marka Jalan Raya Garis Putus-Putus</td>
+      <td>Rancang Bangun Sistem Otomasi Robot Pengecatan...</td>
       <td>Hairil Budiarto, S.T., M.T</td>
       <td>Sri Wahyuni, S.Kom., M.T</td>
-      <td>ABSTRAK\n\nMarka jalan raya adalah sebuah tanda bisa berupa garis, simbol, atau tulisan yang mempunyai fungsi untuk mengatur, memperingatkan dan memandu lalu lintas. Marka jalan dan rambu merupaka...</td>
+      <td>ABSTRAK\n\nMarka jalan raya adalah sebuah tand...</td>
       <td>Teknik Mekatronika</td>
-      <td>ABSTRACT\n\nA highway mark is a sign that can be a line, symbol, or inscription that has the function to organize, warn and guide traffic. Road markings and signposts are part of the road equipmen...</td>
+      <td>ABSTRACT\n\nA highway mark is a sign that can ...</td>
     </tr>
     <tr>
       <th>103</th>
       <td>Agus Salim</td>
-      <td>Sistem Kestabilan Gerak Robot Omnidirection Mengikuti Arah Gerak Mata Angin</td>
+      <td>Sistem Kestabilan Gerak Robot Omnidirection Me...</td>
       <td>Vivi Tri W, S.Kom., M.T</td>
       <td>Ahmad Sahru R, S.Kom., M.T</td>
-      <td>Di era globalisasi ini sangatlah mungkin teknologi modern menjadi salah satu syarat dalam perkembangan teknologi di dunia. Hal ini disebabkan oleh perkembangan daya pikir manusia untuk menciptakan...</td>
+      <td>Di era globalisasi ini sangatlah mungkin tekno...</td>
       <td>Teknik Mekatronika</td>
-      <td>In this globalization era, it is very possible that modern technology will be one of the requirements in the development of technology in the world. This is caused by the development of human thou...</td>
+      <td>In this globalization era, it is very possible...</td>
     </tr>
   </tbody>
 </table>
@@ -1130,7 +1139,7 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a3a12b67-b5bf-4fb4-8c65-a1037c36b8a4')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-67f83688-e307-498f-8d4a-18ee87ecd40f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1182,12 +1191,12 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a3a12b67-b5bf-4fb4-8c65-a1037c36b8a4 button.colab-df-convert');
+        document.querySelector('#df-67f83688-e307-498f-8d4a-18ee87ecd40f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a3a12b67-b5bf-4fb4-8c65-a1037c36b8a4');
+        const element = document.querySelector('#df-67f83688-e307-498f-8d4a-18ee87ecd40f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1207,8 +1216,8 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
   </div>
 
 
-    <div id="df-0f404dc4-d446-4ff1-92b1-9004d4b84cb6">
-      <button class="colab-df-quickchart" onclick="quickchart('df-0f404dc4-d446-4ff1-92b1-9004d4b84cb6')"
+    <div id="df-135ee3f6-56b6-44fe-9728-e866d87c5945">
+      <button class="colab-df-quickchart" onclick="quickchart('df-135ee3f6-56b6-44fe-9728-e866d87c5945')"
                 title="Suggest charts"
                 style="display:none;">
 
@@ -1327,7 +1336,7 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
         }
         (() => {
           let quickchartButtonEl =
-            document.querySelector('#df-0f404dc4-d446-4ff1-92b1-9004d4b84cb6 button');
+            document.querySelector('#df-135ee3f6-56b6-44fe-9728-e866d87c5945 button');
           quickchartButtonEl.style.display =
             google.colab.kernel.accessAllowed ? 'block' : 'none';
         })();
@@ -1339,22 +1348,22 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
 </div></div>
 </div>
 </section>
-<section id="kode-untuk-mengambil-berita-dari-sebuah-website">
-<h3>kode untuk mengambil berita dari sebuah website<a class="headerlink" href="#kode-untuk-mengambil-berita-dari-sebuah-website" title="Link to this heading">#</a></h3>
+<section id="kode-untuk-mengambil-berita-dari-sebuah-website-berita">
+<h3>kode untuk mengambil berita dari sebuah website berita<a class="headerlink" href="#kode-untuk-mengambil-berita-dari-sebuah-website-berita" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">scrap_semua_berita_liputan6</span><span class="p">(</span><span class="n">max_articles</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scrap_berita_detikcom</span><span class="p">(</span><span class="n">max_articles</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Mengambil berita dari indeks Liputan6.com hingga jumlah artikel maksimal tercapai.</span>
+<span class="sd">    Mengambil berita dari indeks news.detik.com hingga jumlah artikel maksimal tercapai.</span>
+<span class="sd">    Kode ini diperbarui untuk menggunakan format URL &quot;?page=&quot; untuk paginasi.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.liputan6.com/indeks&quot;</span>
+    <span class="c1"># URL dasar yang baru sesuai permintaan</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://news.detik.com/indeks&quot;</span>
     <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&#39;</span>
     <span class="p">}</span>
@@ -1369,94 +1378,117 @@ Requirement already satisfied: typing-extensions&gt;=4.0.0 in /usr/local/lib/pyt
     <span class="n">id_counter</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">page_counter</span> <span class="o">=</span> <span class="mi">1</span>
 
-    <span class="c1"># --- PERUBAHAN UTAMA: Loop terus berjalan selama target artikel belum tercapai ---</span>
+    <span class="c1"># print(f&quot;Memulai scraping berita Detik.com, target: {max_articles} artikel.&quot;) # Hapus print</span>
+
     <span class="k">while</span> <span class="n">id_counter</span> <span class="o">&lt;=</span> <span class="n">max_articles</span><span class="p">:</span>
+        <span class="c1"># --- PERUBAHAN UTAMA DI SINI ---</span>
+        <span class="c1"># Menggunakan format URL dengan parameter &quot;?page=&quot;</span>
         <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">?page=</span><span class="si">{</span><span class="n">page_counter</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mengambil data dari halaman: </span><span class="si">{</span><span class="n">page_counter</span><span class="si">}</span><span class="s2"> (Total artikel terkumpul: </span><span class="si">{</span><span class="n">id_counter</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="c1"># print(f&quot;\n--&gt; Mengambil data dari halaman: {page_counter} (Total artikel terkumpul: {id_counter-1})&quot;) # Hapus print</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
-            <span class="n">list_artikel</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;article.articles--rows--item&quot;</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+            <span class="c1"># print(f&quot;    Response Status Code Halaman Indeks: {r.status_code}&quot;) # Hapus print</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 
-            <span class="c1"># Berhenti jika halaman sudah tidak mengandung artikel (halaman terakhir)</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Selektor untuk menemukan semua blok artikel (masih sama dan valid)</span>
+            <span class="n">list_artikel</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;article.list-content__item&quot;</span><span class="p">)</span>
+
             <span class="k">if</span> <span class="ow">not</span> <span class="n">list_artikel</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tidak ada artikel lagi ditemukan. Proses berhenti.&quot;</span><span class="p">)</span>
+                <span class="c1"># print(&quot;    Tidak ada artikel lagi ditemukan di halaman ini. Proses berhenti.&quot;) # Hapus print</span>
                 <span class="k">break</span>
 
+            <span class="c1"># print(f&quot;    Ditemukan {len(list_artikel)} artikel di halaman ini.&quot;) # Hapus print</span>
+
             <span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">list_artikel</span><span class="p">:</span>
-                <span class="c1"># Berhenti jika jumlah artikel sudah mencapai batas maksimal</span>
                 <span class="k">if</span> <span class="n">id_counter</span> <span class="o">&gt;</span> <span class="n">max_articles</span><span class="p">:</span>
+                    <span class="c1"># print(&quot;    Target jumlah artikel tercapai. Menghentikan proses.&quot;) # Hapus print</span>
                     <span class="k">break</span>
 
+                <span class="n">link_detail_tag</span> <span class="o">=</span> <span class="n">artikel</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;a.media__link&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">link_detail_tag</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">link_detail_tag</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="n">link_detail</span> <span class="o">=</span> <span class="n">link_detail_tag</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="s2">&quot;/video/&quot;</span> <span class="ow">in</span> <span class="n">link_detail</span> <span class="ow">or</span> <span class="s2">&quot;/foto/&quot;</span> <span class="ow">in</span> <span class="n">link_detail</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
                 <span class="k">try</span><span class="p">:</span>
-                    <span class="n">link_detail_tag</span> <span class="o">=</span> <span class="n">artikel</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;a.articles--rows--item__title-link&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">link_detail_tag</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">link_detail_tag</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">):</span> <span class="k">continue</span>
+                    <span class="n">response_detail</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_detail</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+                    <span class="n">response_detail</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+                    <span class="n">soup_detail</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response_detail</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
 
-                    <span class="n">link_detail</span> <span class="o">=</span> <span class="n">link_detail_tag</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">link_detail</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://www.liputan6.com&quot;</span><span class="p">):</span> <span class="k">continue</span>
+                    <span class="c1"># --- Ekstraksi Data (Selektor masih sama dan valid) ---</span>
 
-                    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_detail</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-                    <span class="n">soup_detail</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+                    <span class="c1"># Judul Berita: &lt;h1 class=&quot;detail__title&quot;&gt;</span>
+                    <span class="n">judul_tag</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;h1.detail__title&quot;</span><span class="p">)</span>
+                    <span class="n">judul</span> <span class="o">=</span> <span class="n">judul_tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">judul_tag</span> <span class="k">else</span> <span class="s2">&quot;Judul tidak ditemukan&quot;</span>
 
-                    <span class="n">judul</span> <span class="o">=</span> <span class="s2">&quot;Judul tidak ditemukan&quot;</span>
-                    <span class="n">kategori</span> <span class="o">=</span> <span class="s2">&quot;Kategori tidak ditemukan&quot;</span>
-                    <span class="n">script_tag</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;window.kmklabs.gtm&quot;</span><span class="p">))</span>
+                    <span class="c1"># Kategori Berita: &lt;div class=&quot;page__breadcrumb&quot;&gt; -&gt; &lt;a&gt; terakhir</span>
+                    <span class="n">kategori_tags</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;div.page__breadcrumb a&quot;</span><span class="p">)</span>
+                    <span class="n">kategori</span> <span class="o">=</span> <span class="n">kategori_tags</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">kategori_tags</span> <span class="k">else</span> <span class="s2">&quot;Kategori tidak ditemukan&quot;</span>
 
-                    <span class="k">if</span> <span class="n">script_tag</span><span class="p">:</span>
-                        <span class="n">script_content</span> <span class="o">=</span> <span class="n">script_tag</span><span class="o">.</span><span class="n">string</span>
-                        <span class="n">match_title</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&quot;articleTitle&quot;:&quot;(.*?)&quot;&#39;</span><span class="p">,</span> <span class="n">script_content</span><span class="p">)</span>
-                        <span class="k">if</span> <span class="n">match_title</span><span class="p">:</span>
-                            <span class="n">judul</span> <span class="o">=</span> <span class="n">match_title</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;unicode-escape&#39;</span><span class="p">)</span>
+                    <span class="c1"># Isi Berita: &lt;div class=&quot;detail__body-text&quot;&gt;</span>
+                    <span class="n">isi_container</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div.detail__body-text&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">isi_container</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">isi_container</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;script, style, div.lihatjg, table.linksisip&#39;</span><span class="p">):</span>
+                            <span class="n">s</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+                        <span class="n">isi_berita</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">isi_container</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)])</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">isi_berita</span> <span class="o">=</span> <span class="s2">&quot;Isi berita tidak ditemukan.&quot;</span>
 
-                        <span class="n">match_cat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;window\.kmklabs\.category\s*=\s*({.*?});&#39;</span><span class="p">,</span> <span class="n">script_content</span><span class="p">)</span>
-                        <span class="k">if</span> <span class="n">match_cat</span><span class="p">:</span>
-                            <span class="n">cat_data_str</span> <span class="o">=</span> <span class="n">match_cat</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-                            <span class="k">try</span><span class="p">:</span>
-                                <span class="n">kategori</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cat_data_str</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Kategori tidak ditemukan&quot;</span><span class="p">)</span>
-                            <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span> <span class="k">pass</span>
-
-                    <span class="n">isi_container</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div.article-content-body__item-content&quot;</span><span class="p">)</span>
-                    <span class="n">isi_berita</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">isi_container</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)])</span> <span class="k">if</span> <span class="n">isi_container</span> <span class="k">else</span> <span class="s2">&quot;Isi berita tidak ditemukan.&quot;</span>
-
-                    <span class="k">if</span> <span class="n">judul</span> <span class="o">!=</span> <span class="s2">&quot;Judul tidak ditemukan&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">judul</span> <span class="o">!=</span> <span class="s2">&quot;Judul tidak ditemukan&quot;</span> <span class="ow">and</span> <span class="n">isi_berita</span> <span class="ow">and</span> <span class="n">isi_berita</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">id_counter</span><span class="p">)</span>
                         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;judul_berita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">judul</span><span class="p">)</span>
                         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;kategori_berita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kategori</span><span class="p">)</span>
                         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;isi_berita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isi_berita</span><span class="p">)</span>
+
+                        <span class="c1"># print(f&quot;    [+] Berhasil mengambil artikel ID: {id_counter} - Judul: {judul[:50]}...&quot;) # Hapus print</span>
                         <span class="n">id_counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e_detail</span><span class="p">:</span>
+                    <span class="c1"># print(f&quot;    [-] Error saat mengakses detail artikel {link_detail}: {e_detail}&quot;) # Hapus print</span>
+                    <span class="k">continue</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e_process</span><span class="p">:</span>
+                    <span class="c1"># print(f&quot;    [-] Error saat memproses artikel {link_detail}: {e_process}&quot;) # Hapus print</span>
                     <span class="k">continue</span>
 
-            <span class="n">page_counter</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Pindah ke halaman berikutnya</span>
+            <span class="n">page_counter</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e_page</span><span class="p">:</span>
+            <span class="c1"># print(f&quot;\nTerjadi kesalahan saat mengakses halaman indeks {url}: {e_page}&quot;) # Hapus print</span>
+            <span class="c1"># print(&quot;Proses scraping dihentikan.&quot;) # Hapus print</span>
+            <span class="k">break</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e_general</span><span class="p">:</span>
+            <span class="c1"># print(f&quot;\nTerjadi kesalahan umum: {e_general}&quot;) # Hapus print</span>
             <span class="k">break</span>
 
+
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;semua_berita_liputan6.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;berita_detikcom_terbaru.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;\n✅ Proses scraping selesai. Total artikel terkumpul: {len(df)}. Data disimpan di &#39;berita_detikcom_terbaru.csv&#39;&quot;) # Hapus print</span>
     <span class="k">return</span> <span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrap_semua_berita_liputan6</span><span class="p">()</span>
+
+<span class="c1"># --- Untuk menjalankan scraper ---</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">df_hasil</span> <span class="o">=</span> <span class="n">scrap_berita_detikcom</span><span class="p">(</span><span class="n">max_articles</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Data Berita Detik.com ---&quot;</span><span class="p">)</span> <span class="c1"># Ganti judul</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df_hasil</span><span class="p">)</span> <span class="c1"># Gunakan display() untuk tabel pandas</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mengambil data dari halaman: 1 (Total artikel terkumpul: 0)
-Mengambil data dari halaman: 2 (Total artikel terkumpul: 2)
-Mengambil data dari halaman: 3 (Total artikel terkumpul: 19)
-Tidak ada artikel lagi ditemukan. Proses berhenti.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Data Berita Detik.com ---
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-0a835df2-21c1-4737-834f-f2fcfacc7310" class="colab-df-container">
+  <div id="df-6c628d3f-a8f0-456a-82f0-318d736a5cd9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1485,143 +1517,88 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>syahdan-husein-disebut-lakukan-aksi-mogok-maka...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaSyahdan Husein(SH), admin...</td>
+      <td>Illegal Logging di Mentawai Sumbar Rugikan Neg...</td>
+      <td>Berita</td>
+      <td>Tim Operasi Gabungan Satgas Penertiban Kawasan...</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>mensesneg-beberkan-beban-berat-erick-thohir-ja...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaMenteri Sekretaris Negara...</td>
+      <td>Di Balik Batalnya Netanyahu ke KTT Damai Gaza</td>
+      <td>Internasional</td>
+      <td>Perdana Menteri (PM) IsraelBenjamin Netanyahub...</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>nasib-jabatan-ketum-pssi-erick-thohir-setelah-...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaPresiden Prabowo Subianto...</td>
+      <td>Video AS-Turki Tanya RI soal Pasukan Perdamaia...</td>
+      <td>Kategori tidak ditemukan</td>
+      <td>Presiden Prabowo Subiantoditanya Amerika Serik...</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>infografis-daftar-reshuffle-menteri-dan-wamen-...</td>
-      <td>Infografis</td>
-      <td>Liputan6.com, Jakarta -Presiden Prabowo Subian...</td>
+      <td>Video: Buruh Gelar Apel Besar Besok di Bekasi,...</td>
+      <td>Kategori tidak ditemukan</td>
+      <td>Buruhakan menggelar Apel Besar Kebangsaan diLa...</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>prabowo-bentuk-tim-reformasi-kepolisian-kapolr...</td>
-      <td>Politik</td>
-      <td>Liputan6.com, Jakarta -KapolriJenderal Listyo ...</td>
+      <td>Polres Dumai Edukasi Anak TK Tanam Pohon Lewat...</td>
+      <td>Melindungi Tuah Marwah</td>
+      <td>Kepolisian Resor (Polres) Dumai terus menunjuk...</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>momen-ojol-foto-bareng-anggota-polri-dan-tni-t...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaAksidemopengemudi ojek on...</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>7</td>
-      <td>cerita-di-balik-hijrah-bima-ke-malang-setelah-...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaMisteri hilangnya Bima Pe...</td>
+      <th>195</th>
+      <td>196</td>
+      <td>Pemotor Korban Tabrak Lari Mobil Tewas di Tama...</td>
+      <td>Berita</td>
+      <td>Pengendara motor tewas seusai kecelakaan denga...</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>8</td>
-      <td>kementerian-transmigrasi-bentuk-satu-batalion-...</td>
-      <td>Megapolitan</td>
-      <td>Liputan6.com, JakartaKementerian Transmigrasi ...</td>
+      <th>196</th>
+      <td>197</td>
+      <td>Diresmikan Kapolda, SPPG Polres Kampar Distrib...</td>
+      <td>Melindungi Tuah Marwah</td>
+      <td>Dapur Satuan Pelayanan Pemenuhan Gizi(SPPG) Po...</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>9</td>
-      <td>ini-alasan-prabowo-beri-kenaikan-pangkat-ke-dj...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaPresidenPrabowo Subiantom...</td>
+      <th>197</th>
+      <td>198</td>
+      <td>Gencatan Senjata Gaza, Apa yang Akan Terjadi U...</td>
+      <td>Bbc World</td>
+      <td>Pasukan pertahanan Israel (IDF) mengatakan Ham...</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>10</td>
-      <td>dishub-jakarta-tiap-rabu-asn-wajib-naik-angkut...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, Jakarta -Program Rabu Wajib Tran...</td>
+      <th>198</th>
+      <td>199</td>
+      <td>2 Hal Pemicu Cuaca Panas Banget Akhir-akhir Ini</td>
+      <td>Berita</td>
+      <td>Badan Meteorologi, Klimatologi, dan Geofisika ...</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>11</td>
-      <td>presiden-prabowo-tak-akan-bentuk-tgpf-demo-rus...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaPresiden Prabowo Subianto...</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12</td>
-      <td>dilaporkan-hilang-saat-demo-rusuh-di-jakarta-b...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaBima Permana Putra (29), ...</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>13</td>
-      <td>kondisi-delpedro-marhaen-usai-2-pekan-mendekam...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaDirektur Eksekutif Lokata...</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>14</td>
-      <td>erick-thohir-dilantik-jadi-menpora-siapa-jabat...</td>
-      <td>Politik</td>
-      <td>Liputan6.com, Jakarta -Presiden Prabowo Subian...</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>15</td>
-      <td>tim-reformasi-kepolisian-segera-dibentuk-nama-...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, JakartaMenteri Sekretaris Negara...</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>16</td>
-      <td>motif-pembunuhan-terungkap-keluarga-kepala-cab...</td>
-      <td>Megapolitan</td>
-      <td>Liputan6.com, JakartaKasus penculikan disertai...</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>17</td>
-      <td>dilantik-jadi-kepala-badan-komunikasi-pemerint...</td>
-      <td>Politik</td>
-      <td>Liputan6.com, Jakarta -PresidenPrabowoSubianto...</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>18</td>
-      <td>wakil-ketua-komisi-x-tunggu-gebrakan-erick-tho...</td>
-      <td>Politik</td>
-      <td>Liputan6.com, Jakarta -Wakil Ketua Komisi X DP...</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>19</td>
-      <td>prabowo-beri-gelar-jenderal-kehormatan-ke-djam...</td>
-      <td>Peristiwa</td>
-      <td>Liputan6.com, Jakarta -PresidenPrabowo Subiant...</td>
+      <th>199</th>
+      <td>200</td>
+      <td>Polisi Gerebek Warung Jamu yang Jual Miras Opl...</td>
+      <td>Berita</td>
+      <td>Sebuah toko jamu di Sawangan, Depok, digerebek...</td>
     </tr>
   </tbody>
 </table>
+<p>200 rows × 4 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-0a835df2-21c1-4737-834f-f2fcfacc7310')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6c628d3f-a8f0-456a-82f0-318d736a5cd9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1673,12 +1650,12 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
 
     <script>
       const buttonEl =
-        document.querySelector('#df-0a835df2-21c1-4737-834f-f2fcfacc7310 button.colab-df-convert');
+        document.querySelector('#df-6c628d3f-a8f0-456a-82f0-318d736a5cd9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-0a835df2-21c1-4737-834f-f2fcfacc7310');
+        const element = document.querySelector('#df-6c628d3f-a8f0-456a-82f0-318d736a5cd9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1698,8 +1675,8 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
   </div>
 
 
-    <div id="df-bf4cd9dd-6488-4894-80a9-7e229d9eff3a">
-      <button class="colab-df-quickchart" onclick="quickchart('df-bf4cd9dd-6488-4894-80a9-7e229d9eff3a')"
+    <div id="df-778f700d-4f05-436b-b17b-892d8779600e">
+      <button class="colab-df-quickchart" onclick="quickchart('df-778f700d-4f05-436b-b17b-892d8779600e')"
                 title="Suggest charts"
                 style="display:none;">
 
@@ -1818,12 +1795,67 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
         }
         (() => {
           let quickchartButtonEl =
-            document.querySelector('#df-bf4cd9dd-6488-4894-80a9-7e229d9eff3a button');
+            document.querySelector('#df-778f700d-4f05-436b-b17b-892d8779600e button');
           quickchartButtonEl.style.display =
             google.colab.kernel.accessAllowed ? 'block' : 'none';
         })();
       </script>
     </div>
+
+  <div id="id_3a5128ce-c356-45ee-99ae-36ba807a1140">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_hasil')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_3a5128ce-c356-45ee-99ae-36ba807a1140 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_hasil');
+      }
+      })();
+    </script>
+  </div>
 
     </div>
   </div>
@@ -1919,313 +1951,6 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-5abf9eca-bcfa-48cc-9443-b6d49e8a1c39" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>page_sumber</th>
-      <th>link_ditemukan</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-      <td>https://pta.trunojoyo.ac.id/index.html</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-      <td>https://pta.trunojoyo.ac.id/c_template/</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>https://pta.trunojoyo.ac.id/</td>
-      <td>https://library.trunojoyo.ac.id/detil.php?id=23</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>378</th>
-      <td>379</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/welcome/detail/110...</td>
-    </tr>
-    <tr>
-      <th>379</th>
-      <td>380</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/welcome/detail/110...</td>
-    </tr>
-    <tr>
-      <th>380</th>
-      <td>381</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7/2</td>
-    </tr>
-    <tr>
-      <th>381</th>
-      <td>382</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7/3</td>
-    </tr>
-    <tr>
-      <th>382</th>
-      <td>383</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7/462</td>
-    </tr>
-  </tbody>
-</table>
-<p>383 rows × 3 columns</p>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-5abf9eca-bcfa-48cc-9443-b6d49e8a1c39')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-5abf9eca-bcfa-48cc-9443-b6d49e8a1c39 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-5abf9eca-bcfa-48cc-9443-b6d49e8a1c39');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    <div id="df-da07d7dc-4340-45ab-8b4a-7ff825fa753e">
-      <button class="colab-df-quickchart" onclick="quickchart('df-da07d7dc-4340-45ab-8b4a-7ff825fa753e')"
-                title="Suggest charts"
-                style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-      </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-      <script>
-        async function quickchart(key) {
-          const quickchartButtonEl =
-            document.querySelector('#' + key + ' button');
-          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-          quickchartButtonEl.classList.add('colab-df-spinner');
-          try {
-            const charts = await google.colab.kernel.invokeFunction(
-                'suggestCharts', [key], {});
-          } catch (error) {
-            console.error('Error during call to suggestCharts:', error);
-          }
-          quickchartButtonEl.classList.remove('colab-df-spinner');
-          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-        }
-        (() => {
-          let quickchartButtonEl =
-            document.querySelector('#df-da07d7dc-4340-45ab-8b4a-7ff825fa753e button');
-          quickchartButtonEl.style.display =
-            google.colab.kernel.accessAllowed ? 'block' : 'none';
-        })();
-      </script>
-    </div>
-
-    </div>
-  </div>
-</div></div>
 </div>
 </section>
 </section>
@@ -2243,7 +1968,7 @@ Tidak ada artikel lagi ditemukan. Proses berhenti.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /usr/local/lib/python3.12/dist-packages (2.2.2)
 Requirement already satisfied: nltk in /usr/local/lib/python3.12/dist-packages (3.9.1)
 Requirement already satisfied: sastrawi in /usr/local/lib/python3.12/dist-packages (1.0.1)
-Requirement already satisfied: numpy&gt;=1.26.0 in /usr/local/lib/python3.12/dist-packages (from pandas) (2.0.2)
+Requirement already satisfied: numpy&gt;=1.26.0 in /usr/local/lib/python3.12/dist-packages (from pandas) (1.26.4)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas) (2025.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas) (2025.2)
@@ -2261,6 +1986,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt_tab&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2269,6 +1995,8 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
 [nltk_data]   Package punkt is already up-to-date!
 [nltk_data] Downloading package stopwords to /root/nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -2311,7 +2039,6 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🎉 Semua library dan paket data siap digunakan!&quot;</span><span class="p">)</span>
 
 
-
 <span class="c1"># --- Fungsi untuk Preprocessing ---</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">hapus_simbol</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">teks</span><span class="p">)</span>
@@ -2327,13 +2054,31 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
 <span class="k">def</span><span class="w"> </span><span class="nf">stemming_teks</span><span class="p">(</span><span class="n">teks</span><span class="p">,</span> <span class="n">stemmer</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
 
+<span class="c1"># --- Fungsi baru untuk menghapus angka ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hapus_angka</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+    <span class="c1"># Hapus token yang hanya terdiri dari digit</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()])</span>
+
 <span class="k">def</span><span class="w"> </span><span class="nf">tokenisasi</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="c1"># Mengembalikan list token</span>
     <span class="k">return</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gabung_token</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+    <span class="c1"># Menggabungkan list token menjadi string</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
 
 <span class="c1"># @title ▶️ Jalankan Proses Utama (Scraping &amp; Preprocessing)</span>
 
 <span class="c1"># --- Langkah 1: Scraping Data ---</span>
-<span class="n">df_scraped</span> <span class="o">=</span> <span class="n">scrap_semua_berita_liputan6</span><span class="p">(</span><span class="n">max_articles</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span> <span class="c1"># Ambil 25 artikel untuk contoh</span>
+<span class="c1"># Gunakan data yang sudah di-scrape sebelumnya jika ada di kernel</span>
+<span class="k">if</span> <span class="s1">&#39;df_scraped&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data scraped tidak ditemukan di kernel, melakukan scraping ulang...&quot;</span><span class="p">)</span>
+    <span class="n">df_scraped</span> <span class="o">=</span> <span class="n">scrap_berita_detikcom</span><span class="p">(</span><span class="n">max_articles</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menggunakan data scraped yang sudah ada di kernel.&quot;</span><span class="p">)</span>
+
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">df_scraped</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
     <span class="c1"># --- Langkah 2: Preprocessing Data ---</span>
@@ -2348,34 +2093,46 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
     <span class="n">stemmer</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
 
     <span class="c1"># Terapkan semua langkah preprocessing secara berurutan</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (1/6) Case Folding...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (1/7) Case Folding...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (2/6) Menghilangkan Simbol/Tanda Baca...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (2/7) Menghilangkan Simbol/Tanda Baca...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">hapus_simbol</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (3/6) Normalisasi Kata...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (3/7) Normalisasi Kata...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">normalisasi_kata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kamus_baku</span><span class="p">))</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (4/6) Menghapus Stopword...&quot;</span><span class="p">)</span>
+    <span class="c1"># --- Tambahkan langkah menghapus angka ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (4/7) Menghapus Angka...&quot;</span><span class="p">)</span>
+    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">hapus_angka</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (5/7) Menghapus Stopword...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">hapus_stopword</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">list_stopword</span><span class="p">))</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (5/6) Stemming...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (6/7) Stemming...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemming_teks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stemmer</span><span class="p">))</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (6/6) Tokenisasi Akhir...&quot;</span><span class="p">)</span>
+    <span class="c1"># Tokenisasi tetap menghasilkan list untuk digunakan di langkah selanjutnya jika diperlukan</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (7/7) Tokenisasi Akhir (dalam bentuk list)...&quot;</span><span class="p">)</span>
     <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;isi_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenisasi</span><span class="p">)</span>
+
+    <span class="c1"># Menggabungkan token menjadi string</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (8/8) Menggabungkan token menjadi string...&quot;</span><span class="p">)</span>
+    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens_string&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">gabung_token</span><span class="p">)</span>
+
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Preprocessing selesai!&quot;</span><span class="p">)</span>
 
     <span class="c1"># --- Langkah 3: Simpan dan Tampilkan Hasil ---</span>
-    <span class="n">df_processed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;berita_liputan6_bersih.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;&quot;</span><span class="p">)</span>
+    <span class="c1"># Simpan hasil preprocessing ke file CSV</span>
+    <span class="n">df_processed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;detik_bersih_tanpa_angka.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil preprocessing disimpan dalam file &#39;detik_bersih_tanpa_angka.csv&#39;&quot;</span><span class="p">)</span>
+
 
     <span class="c1"># Menampilkan perbandingan sebelum dan sesudah (seperti di tutorial referensi)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔎 Contoh Perbandingan Hasil Akhir (5 baris pertama):&quot;</span><span class="p">)</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># Agar teks berita tidak terpotong</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">df_processed</span><span class="p">[[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;tokens&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df_processed</span><span class="p">[[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;tokens&#39;</span><span class="p">]])</span> <span class="c1"># Menampilkan kolom string</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tidak ada data untuk diproses. Pastikan proses scraping berhasil.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -2386,27 +2143,26 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.12/dist-pac
 ✅ Paket NLTK &quot;stopwords&quot; sudah ada.
 
 🎉 Semua library dan paket data siap digunakan!
-Mengambil data dari halaman: 1 (Total artikel terkumpul: 0)
-Mengambil data dari halaman: 2 (Total artikel terkumpul: 2)
-Mengambil data dari halaman: 3 (Total artikel terkumpul: 19)
-Tidak ada artikel lagi ditemukan. Proses berhenti.
+Menggunakan data scraped yang sudah ada di kernel.
 
 Memulai proses preprocessing data...
-    (1/6) Case Folding...
-    (2/6) Menghilangkan Simbol/Tanda Baca...
-    (3/6) Normalisasi Kata...
-    (4/6) Menghapus Stopword...
-    (5/6) Stemming...
-    (6/6) Tokenisasi Akhir...
+    (1/7) Case Folding...
+    (2/7) Menghilangkan Simbol/Tanda Baca...
+    (3/7) Normalisasi Kata...
+    (4/7) Menghapus Angka...
+    (5/7) Menghapus Stopword...
+    (6/7) Stemming...
+    (7/7) Tokenisasi Akhir (dalam bentuk list)...
+    (8/8) Menggabungkan token menjadi string...
 
 ✅ Preprocessing selesai!
-Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
+Hasil preprocessing disimpan dalam file &#39;detik_bersih_tanpa_angka.csv&#39;
 
 🔎 Contoh Perbandingan Hasil Akhir (5 baris pertama):
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-1cd4d910-69e5-49fa-9411-ab7b3c37a948" class="colab-df-container">
+  <div id="df-851a89ef-6785-49d8-ae04-c80ca1a59ac6" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2432,36 +2188,67 @@ Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
   <tbody>
     <tr>
       <th>0</th>
-      <td>Liputan6.com, JakartaSyahdan Husein(SH), admin akun instagram @gejayanmemanggil, melakukan aksi mogok makan sebagai bentuk perlawanan dari balik jeruji Polda Metro Jaya. Aksimogok makanitu disebut...</td>
-      <td>[liputan6com, jakartasyahdan, huseinsh, admin, akun, instagram, gejayanmemanggil, aksi, mogok, makan, bentuk, lawan, jeruji, polda, metro, jaya, aksimogok, makanitu, 11, september, 2025, baca, kab...</td>
+      <td>Sekitar 80 orang wargaKorea Selatan(Korsel) dilaporkan hilang diKamboja. Mereka diduga menjadi korban penipuan lowongan pekerjaan palsu atau fake jobs scam. Dilansir AFP, Selasa (14/10/2025), kasu...</td>
+      <td>[orang, wargakorea, selatankorsel, lapor, hilang, dikamboja, duga, korban, tipu, lowong, kerja, palsu, fake, jobs, scam, lansir, afp, selasa, ungkap, mati, mahasiswa, akibat, siksa, markas, tipu, ...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Liputan6.com, JakartaMenteri Sekretaris Negara (Mensesneg) Prasetyo Hadi mengatakan, Erick Thohir memiliki beban yang berat menjadi Menteri Pemuda dan Olahraga (Menpora). Menurut dia, PresidenPrab...</td>
-      <td>[liputan6com, jakartamenteri, sekretaris, negara, mensesneg, prasetyo, had, erick, thohir, milik, beban, berat, menteri, pemuda, olahraga, menpora, presidenprabowo, subiantoingin, sepak, bola, kel...</td>
+      <td>Tim Operasi Gabungan Satgas Penertiban Kawasan Hutan (PKH) membongkar kasusillegal loggingdi Hutan Sipora, Kepulauan Mentawai, Sumatera Barat (Sumbar). Dalam pengungkapan itu, tim mengamankan 4.61...</td>
+      <td>[tim, operasi, gabung, satgas, tertib, kawasan, hutan, pkh, bongkar, kasusillegal, loggingdi, hutan, sipora, pulau, tawa, sumatera, barat, sumbar, ungkap, tim, aman, meter, kubik, kayu, meranti, u...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Liputan6.com, JakartaPresiden Prabowo Subianto resmi melantikErick Thohirmenjadi Menteri Pemuda dan Olahraga (Menpora) di Istana Negara Jakarta, Rabu (17/9/2025). Meski sudah menjabat menpora, Eri...</td>
-      <td>[liputan6com, jakartapresiden, prabowo, subianto, resmi, melantikerick, thohirmenjadi, menteri, pemuda, olahraga, menpora, istana, negara, jakarta, rabu, 1792025, jabat, menpora, erick, putus, mun...</td>
+      <td>Perdana Menteri (PM) IsraelBenjamin Netanyahubatal menghadiri KTT Perdamaian Gaza di Mesir. Batalnya kehadiran Netanyahu lantaran mendapat penolakan dari sejumlah negara. Netanyahu diundang oleh P...</td>
+      <td>[perdana, menteri, pm, israelbenjamin, netanyahubatal, hadir, ktt, damai, gaza, mesir, batal, hadir, netanyahu, lantar, tolak, negara, netanyahu, undang, presiden, amerika, serikat, donald, trump,...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Liputan6.com, Jakarta -Presiden Prabowo Subianto kembali melakukanreshuffleKabinet Merah Putih. Pelantikan digelar di Istana Negara Jakarta pada hari ini, Rabu (17/9/2025). Pelantikan ini berdasar...</td>
-      <td>[liputan6com, jakarta, presiden, prabowo, subianto, melakukanreshufflekabinet, merah, putih, lantik, gelar, istana, negara, jakarta, rabu, 1792025, lantik, dasar, putus, presiden, keppres, 96, p, ...</td>
+      <td>Presiden Prabowo Subiantoditanya Amerika Serikat, Qatar hingga Mesir terkait kesiapan Indonesia dalam mendukungpasukan perdamaian di Gaza. Prabowo menegaskan Indonesia siap untuk mendukung pasukan...</td>
+      <td>[presiden, prabowo, subiantoditanya, amerika, serikat, qatar, mesir, kait, kesiap, indonesia, mendukungpasukan, damai, gaza, prabowo, indonesia, dukung, pasu, damai, digaza, prabowo, aku, bicara, ...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Liputan6.com, Jakarta -KapolriJenderal Listyo Sigit Prabowo terbuka dengan rencana pembentukan Tim Reformasi Kepolisian yang dibentuk Presiden. Dia memastikan kepolisian akan menindaklanjuti apapu...</td>
-      <td>[liputan6com, jakarta, kapolrijenderal, listyo, sigit, prabowo, buka, rencana, bentuk, tim, reformasi, polisi, bentuk, presiden, polisi, menindaklanjuti, apa, bijak, tim, reformasi, polisi, bentuk...</td>
+      <td>Buruhakan menggelar Apel Besar Kebangsaan diLapangan Jababeka Botanical, Bekasi, Jawa Barat, pada Rabu (15/10). Selain melakukan orasi, buruh akan membacakan deklarasi seperti menolak upah murah h...</td>
+      <td>[buruhakan, gelar, apel, bangsa, lapang, jababeka, botanical, bekas, jawa, barat, rabu, orasi, buruh, baca, deklarasi, tolak, upah, murah, dukung, penuh, kebijakankebijakan, pemerintahanprabowo, s...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Pengendara motor tewas seusai kecelakaan dengan sebuah mobil di dekat Taman Kopassus, Taman Baru, Taktakan, Kota Serang. Mobil yang menabrak langsung kabur seusai kejadian tersebut. Kasat Lantas P...</td>
+      <td>[kendara, motor, tewas, celaka, mobil, taman, kopassus, taman, taktakan, kota, serang, mobil, tabrak, langsung, kabur, jadi, kasat, lantas, polresta, serang, kota, kompol, tiwi, afrina, kanit, gak...</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>Dapur Satuan Pelayanan Pemenuhan Gizi(SPPG) Polres Kampar resmi beroperasi hari ini. Kegiatan ini diresmikan secara langsung oleh Kapolda Riau Irjen Pol Herry Heryawan. Dalam sambutannya, Kapolda ...</td>
+      <td>[dapur, satu, layan, penuh, gizisppg, polres, kampar, resmi, operasi, giat, resmi, langsung, kapolda, riau, irjen, pol, herry, heryawan, sambut, kapolda, irjen, herry, heryawan, luncur, dapur, spp...</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Pasukan pertahanan Israel (IDF) mengatakan Hamas telah menyerahkan semua sandera yang masih hidup yang ditawan di Gaza dengan imbalan ribuan tahanan dan napi Palestina, sebagai bagian dari fase pe...</td>
+      <td>[pasu, tahan, israel, idf, hamas, serah, sandera, hidup, tawan, gaza, imbal, ribu, tahan, napi, palestina, fase, rencana, damai, presiden, as, donald, trump, gaza, sepakat, ujung, gencat, senjata,...</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) menjelaskan penyebab cuaca yang terasa sangat panas belakangan ini. Pemicunya salah satunya yakni minimnya tutupan awan. "Kenapa terasa makin p...</td>
+      <td>[badan, meteorologi, klimatologi, geofisika, bmkg, sebab, cuaca, panas, picu, salah, satu, minim, tutup, awan, panas, minim, tutup, awan, sinar, matahari, langsung, tembus, hambat, kepala, bmkg, d...</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>Sebuah toko jamu di Sawangan, Depok, digerebek warga karena menjualminuman keras (miras). Sebanyak 63 botol ciu dan miras oplosan disita. Penggerebekan ini dilakukan oleh Polisi, Satpol PP ketika ...</td>
+      <td>[toko, jamu, sawangan, depok, gerebek, warga, menjualminuman, keras, miras, botol, ciu, miras, oplos, sita, gerebek, polisi, satpol, pp, giat, patroli, warga, senin, wib, jalan, muchtar, raya, dep...</td>
     </tr>
   </tbody>
 </table>
+<p>200 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-1cd4d910-69e5-49fa-9411-ab7b3c37a948')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-851a89ef-6785-49d8-ae04-c80ca1a59ac6')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2513,12 +2300,12 @@ Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
 
     <script>
       const buttonEl =
-        document.querySelector('#df-1cd4d910-69e5-49fa-9411-ab7b3c37a948 button.colab-df-convert');
+        document.querySelector('#df-851a89ef-6785-49d8-ae04-c80ca1a59ac6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-1cd4d910-69e5-49fa-9411-ab7b3c37a948');
+        const element = document.querySelector('#df-851a89ef-6785-49d8-ae04-c80ca1a59ac6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2538,8 +2325,8 @@ Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
   </div>
 
 
-    <div id="df-e985c2c9-f137-40ad-852f-ed2b46a5c068">
-      <button class="colab-df-quickchart" onclick="quickchart('df-e985c2c9-f137-40ad-852f-ed2b46a5c068')"
+    <div id="df-10af0eed-43cb-4e2c-a30f-37e28da96ddd">
+      <button class="colab-df-quickchart" onclick="quickchart('df-10af0eed-43cb-4e2c-a30f-37e28da96ddd')"
                 title="Suggest charts"
                 style="display:none;">
 
@@ -2658,7 +2445,7 @@ Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
         }
         (() => {
           let quickchartButtonEl =
-            document.querySelector('#df-e985c2c9-f137-40ad-852f-ed2b46a5c068 button');
+            document.querySelector('#df-10af0eed-43cb-4e2c-a30f-37e28da96ddd button');
           quickchartButtonEl.style.display =
             google.colab.kernel.accessAllowed ? 'block' : 'none';
         })();
@@ -2670,161 +2457,42 @@ Hasil disimpan dalam file &#39;berita_liputan6_bersih.csv&#39;
 </div></div>
 </div>
 </section>
-<section id="praproses-untuk-abstrak-pta">
-<h3>praproses untuk abstrak pta<a class="headerlink" href="#praproses-untuk-abstrak-pta" title="Link to this heading">#</a></h3>
+<section id="melakukan-tfidf-dan-word-embedding-ntuk-berita-yang-telah-di-bersihkan">
+<h3>melakukan tfidf dan word embedding ntuk berita yang telah di bersihkan<a class="headerlink" href="#melakukan-tfidf-dan-word-embedding-ntuk-berita-yang-telah-di-bersihkan" title="Link to this heading">#</a></h3>
+</section>
+<section id="melakukan-tf-idf-pada-data-berita">
+<h3>Melakukan TF-IDF pada Data Berita<a class="headerlink" href="#melakukan-tf-idf-pada-data-berita" title="Link to this heading">#</a></h3>
+<p>Langkah ini akan mengubah teks berita yang sudah ditokenisasi menjadi representasi numerik menggunakan teknik TF-IDF (Term Frequency-Inverse Document Frequency).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># =======================================================================</span>
-<span class="c1"># SEL 1: INSTALASI, IMPORT, DAN PERSIAPAN</span>
-<span class="c1"># =======================================================================</span>
-<span class="c1"># @title 🏗️ Instalasi &amp; Persiapan Library</span>
-<span class="c1"># Menginstal library yang dibutuhkan</span>
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>sastrawi<span class="w"> </span>beautifulsoup4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Sastrawi.Stemmer.StemmerFactory</span><span class="w"> </span><span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="c1"># Mengambil kolom &#39;tokens_string&#39; dari DataFrame hasil preprocessing</span>
+<span class="c1"># Pastikan nama kolomnya sesuai dengan output dari langkah preprocessing</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens_string&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-<span class="c1"># Fungsi untuk memeriksa &amp; mengunduh paket NLTK yang diperlukan secara otomatis</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">download_nltk_resources</span><span class="p">():</span>
-    <span class="n">resources</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;tokenizers/punkt&quot;</span><span class="p">:</span> <span class="s2">&quot;punkt&quot;</span><span class="p">,</span> <span class="s2">&quot;corpora/stopwords&quot;</span><span class="p">:</span> <span class="s2">&quot;stopwords&quot;</span><span class="p">}</span>
-    <span class="k">for</span> <span class="n">resource_path</span><span class="p">,</span> <span class="n">resource_name</span> <span class="ow">in</span> <span class="n">resources</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">nltk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">resource_path</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;✅ Paket NLTK &quot;</span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s1">&quot; sudah ada.&#39;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">LookupError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;🟡 Paket NLTK &quot;</span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s1">&quot; tidak ditemukan. Mengunduh...&#39;</span><span class="p">)</span>
-            <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">resource_name</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;✅ Unduhan &quot;</span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s1">&quot; selesai.&#39;</span><span class="p">)</span>
+<span class="c1"># Inisialisasi TfidfVectorizer</span>
+<span class="c1"># Anda bisa mengatur parameter seperti max_features jika ingin membatasi jumlah fitur</span>
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span> <span class="c1"># Contoh: ambil 1000 fitur terpenting</span>
 
-<span class="c1"># Panggil fungsi persiapan NLTK</span>
-<span class="n">download_nltk_resources</span><span class="p">()</span>
+<span class="c1"># Lakukan fit_transform pada data</span>
+<span class="n">X_tfidf</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
 
-<span class="c1"># Import modul NLTK setelah diunduh</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="c1"># Mengubah hasil TF-IDF menjadi DataFrame untuk tampilan</span>
+<span class="c1"># tfidf_vectorizer.get_feature_names_out() mendapatkan nama fitur (kata)</span>
+<span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🎉 Semua library dan paket data siap digunakan!&quot;</span><span class="p">)</span>
-
-
-<span class="c1"># =======================================================================</span>
-<span class="c1"># SEL 2: KUMPULAN FUNGSI (SCRAPER &amp; PREPROCESSOR)</span>
-<span class="c1"># =======================================================================</span>
-<span class="c1"># @title 🛠️ Definisi Fungsi-Fungsi</span>
-
-<span class="c1"># --- Fungsi untuk Preprocessing ---</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">hapus_simbol</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">teks</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">normalisasi_kata</span><span class="p">(</span><span class="n">teks</span><span class="p">,</span> <span class="n">kamus_baku</span><span class="p">):</span>
-    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">kamus_baku</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">])</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">hapus_stopword</span><span class="p">(</span><span class="n">teks</span><span class="p">,</span> <span class="n">list_stopword</span><span class="p">):</span>
-    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_stopword</span><span class="p">])</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">stemming_teks</span><span class="p">(</span><span class="n">teks</span><span class="p">,</span> <span class="n">stemmer</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">tokenisasi</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
-
-
-<span class="c1"># =======================================================================</span>
-<span class="c1"># SEL 3: EKSEKUSI UTAMA</span>
-<span class="c1"># =======================================================================</span>
-<span class="c1"># @title ▶️ Jalankan Proses Utama (Scraping &amp; Preprocessing)</span>
-
-<span class="c1"># --- Langkah 1: Scraping Data ---</span>
-<span class="n">df_scraped</span> <span class="o">=</span> <span class="n">ptaa</span><span class="p">()</span>
-
-<span class="c1"># --- Langkah 2: Preprocessing Data ---</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">df_scraped</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Memulai proses preprocessing data abstrak...&quot;</span><span class="p">)</span>
-
-    <span class="n">df_processed</span> <span class="o">=</span> <span class="n">df_scraped</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-    <span class="c1"># Menghapus baris dimana abstrak tidak tersedia</span>
-    <span class="n">df_processed</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Tidak tersedia&#39;</span><span class="p">]</span>
-
-    <span class="c1"># Siapkan alat-alat preprocessing</span>
-    <span class="n">kamus_baku</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;yg&#39;</span><span class="p">:</span> <span class="s1">&#39;yang&#39;</span><span class="p">,</span> <span class="s1">&#39;dgn&#39;</span><span class="p">:</span> <span class="s1">&#39;dengan&#39;</span><span class="p">,</span> <span class="s1">&#39;utk&#39;</span><span class="p">:</span> <span class="s1">&#39;untuk&#39;</span><span class="p">,</span> <span class="s1">&#39;dlm&#39;</span><span class="p">:</span> <span class="s1">&#39;dalam&#39;</span><span class="p">,</span> <span class="s1">&#39;kpd&#39;</span><span class="p">:</span> <span class="s1">&#39;kepada&#39;</span><span class="p">,</span> <span class="s1">&#39;thd&#39;</span><span class="p">:</span> <span class="s1">&#39;terhadap&#39;</span><span class="p">}</span>
-    <span class="n">list_stopword</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
-    <span class="n">stemmer</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
-
-    <span class="c1"># Terapkan semua langkah preprocessing</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (1/6) Case Folding...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (2/6) Menghilangkan Simbol/Tanda Baca...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">hapus_simbol</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (3/6) Normalisasi Kata...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">normalisasi_kata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kamus_baku</span><span class="p">))</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (4/6) Menghapus Stopword...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">hapus_stopword</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">list_stopword</span><span class="p">))</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (5/6) Stemming...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemming_teks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stemmer</span><span class="p">))</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    (6/6) Tokenisasi Akhir...&quot;</span><span class="p">)</span>
-    <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;abstrak_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenisasi</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Preprocessing selesai!&quot;</span><span class="p">)</span>
-
-    <span class="c1"># --- Langkah 3: Simpan dan Tampilkan Hasil ---</span>
-    <span class="n">df_processed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pta_trunojoyo_bersih.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔎 Contoh Perbandingan Hasil Akhir (5 baris pertama):&quot;</span><span class="p">)</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">df_processed</span><span class="p">[[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">,</span> <span class="s1">&#39;tokens&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tidak ada data untuk diproses. Pastikan proses scraping berhasil.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil TF-IDF:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_tfidf</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Paket NLTK &quot;punkt&quot; sudah ada.
-✅ Paket NLTK &quot;stopwords&quot; sudah ada.
-
-🎉 Semua library dan paket data siap digunakan!
-
-Memulai proses scraping data abstrak dari PTA Trunojoyo...
-    Mengambil data dari prodi &#39;Teknik Industri&#39;, halaman 1...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/soupsieve/css_parser.py:876: FutureWarning: The pseudo class &#39;:contains&#39; is deprecated, &#39;:-soup-contains&#39; should be used moving forward.
-  warnings.warn(  # noqa: B028
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Mengambil data dari prodi &#39;Teknik Informatika&#39;, halaman 1...
-    Mengambil data dari prodi &#39;Sistem Informasi&#39;, halaman 1...
-
-✅ Scraping selesai. 10 data abstrak disimpan di &#39;pta_trunojoyo_raw.csv&#39;
-
-Memulai proses preprocessing data abstrak...
-    (1/6) Case Folding...
-    (2/6) Menghilangkan Simbol/Tanda Baca...
-    (3/6) Normalisasi Kata...
-    (4/6) Menghapus Stopword...
-    (5/6) Stemming...
-    (6/6) Tokenisasi Akhir...
-
-✅ Preprocessing selesai!
-Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
-
-🔎 Contoh Perbandingan Hasil Akhir (5 baris pertama):
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil TF-IDF:
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-ea929647-05d5-4ac1-b674-325590b775ea" class="colab-df-container">
+  <div id="df-2935dd47-673e-49e5-9dd4-a865e87f53fe" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2843,43 +2511,158 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>abstrak</th>
-      <th>tokens</th>
+      <th>064my</th>
+      <th>12sekolah</th>
+      <th>14102025bgn</th>
+      <th>162m2025</th>
+      <th>1x24</th>
+      <th>2007tidak</th>
+      <th>2015mei</th>
+      <th>2025detikpagi</th>
+      <th>2025program</th>
+      <th>2025secara</th>
+      <th>...</th>
+      <th>zat</th>
+      <th>zero</th>
+      <th>zharotul</th>
+      <th>zionis</th>
+      <th>ziv</th>
+      <th>zon</th>
+      <th>zona</th>
+      <th>zone</th>
+      <th>zoonosis</th>
+      <th>zulfinasran</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Portofolio adalah sekumpulan saham yang dimiliki investor. Dalam setiap saham pada portofolio memiliki resiko yang harus diminimalkan dengan cara diversifikasi yaitu dengan mengalokasikan dana pad...</td>
-      <td>[portofolio, kumpul, saham, milik, investor, saham, portofolio, milik, resiko, minimal, diversifikasi, alokasi, dana, alternatif, investasi, kombinasi, saham, portofolio, skripsi, saham, saham, us...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>PT. ABC merupakan perusahaan yang bergerak dibidang manufaktur kayu yaitu memproduksi meja, kursi dan lain-lain. Terdapat berbagai jenis mesin yang berada dalam lantai produksi PT. ABC untuk menun...</td>
-      <td>[pt, abc, usaha, gerak, bidang, manufaktur, kayu, produksi, meja, kursi, lainlain, jenis, mesin, lantai, produksi, pt, abc, tunjang, jalan, proses, produksi, planner, ripsaw, sanding, mesin, pt, a...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Bangkalan merupakan salah satu kabupaten yang memiliki potensi alam salak. ?Potensi alam tersebut dimanfaatkan oleh UD. Budi Jaya yang terletak di Desa ?Kramat? Bangkalan dengan memproduksi produk...</td>
-      <td>[bangkal, salah, kabupaten, milik, potensi, alam, salak, potensi, alam, manfaat, ud, budi, jaya, letak, desa, kramat, bangkal, produksi, produk, olah, salak, ud, budi, jaya, temu, kendala, pasar, ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Simulasi adalah duplikasi atau abstraksi dari persoalan dalam kehidupan nyata ke dalam model matematika. Berdasarkan hasil survey pendahuluan di lantai produksi PT Indospring tbk masih sering terj...</td>
-      <td>[simulasi, duplikasi, abstraksi, hidup, nyata, model, matematika, dasar, hasil, survey, dahulu, lantai, produksi, pt, indospring, tbk, proses, produksi, optimal, salah, satu, antri, target, output...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Kepuasan adalah tingkat perasaan seseorang terhadap pelayanan setelah membandingkan antara kinerja dengan harapan yang diinginkan. Dalam penelitian ini dilakukan studi kualitas layanan dalam menin...</td>
-      <td>[puas, tingkat, asa, layan, banding, kerja, harap, teliti, studi, kualitas, layan, tingkat, puas, masyrakat, integrasi, importance, performance, analysis, ipa, model, kano, dekat, tuju, bantu, sat...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 5462 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ea929647-05d5-4ac1-b674-325590b775ea')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2935dd47-673e-49e5-9dd4-a865e87f53fe')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2931,12 +2714,12 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ea929647-05d5-4ac1-b674-325590b775ea button.colab-df-convert');
+        document.querySelector('#df-2935dd47-673e-49e5-9dd4-a865e87f53fe button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ea929647-05d5-4ac1-b674-325590b775ea');
+        const element = document.querySelector('#df-2935dd47-673e-49e5-9dd4-a865e87f53fe');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2956,8 +2739,8 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
   </div>
 
 
-    <div id="df-7e15b5b6-6e1f-4269-8e1b-89caa290d676">
-      <button class="colab-df-quickchart" onclick="quickchart('df-7e15b5b6-6e1f-4269-8e1b-89caa290d676')"
+    <div id="df-855fa3b7-900b-4f87-b55e-dbe4c9af496e">
+      <button class="colab-df-quickchart" onclick="quickchart('df-855fa3b7-900b-4f87-b55e-dbe4c9af496e')"
                 title="Suggest charts"
                 style="display:none;">
 
@@ -3076,7 +2859,7 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
         }
         (() => {
           let quickchartButtonEl =
-            document.querySelector('#df-7e15b5b6-6e1f-4269-8e1b-89caa290d676 button');
+            document.querySelector('#df-855fa3b7-900b-4f87-b55e-dbe4c9af496e button');
           quickchartButtonEl.style.display =
             google.colab.kernel.accessAllowed ? 'block' : 'none';
         })();
@@ -3086,6 +2869,979 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
     </div>
   </div>
 </div></div>
+</div>
+</section>
+<section id="melakukan-word-embedding-menggunakan-rata-rata-word2vec">
+<h3>Melakukan Word Embedding (menggunakan rata-rata Word2Vec)<a class="headerlink" href="#melakukan-word-embedding-menggunakan-rata-rata-word2vec" title="Link to this heading">#</a></h3>
+<p>Langkah ini akan merepresentasikan setiap dokumen berita sebagai rata-rata vektor kata (embedding) menggunakan model Word2Vec.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gensim.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Word2Vec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Mengambil kolom &#39;tokens&#39; (list of tokens) dari DataFrame hasil preprocessing</span>
+<span class="c1"># Pastikan nama kolomnya sesuai dengan output dari langkah preprocessing</span>
+<span class="n">tokenized_corpus</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># Latih model Word2Vec</span>
+<span class="c1"># vector_size: jumlah dimensi embedding</span>
+<span class="c1"># window: ukuran jendela konteks</span>
+<span class="c1"># min_count: abaikan kata dengan frekuensi kurang dari ini</span>
+<span class="c1"># workers: jumlah thread yang digunakan</span>
+<span class="n">word2vec_model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">tokenized_corpus</span><span class="p">,</span> <span class="n">vector_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Fungsi untuk mendapatkan vektor dokumen dengan merata-ratakan vektor kata</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">document_vector</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="c1"># Filter token yang ada dalam kosakata model</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">doc</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">index_to_key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">vector_size</span><span class="p">)</span> <span class="c1"># Mengembalikan vektor nol jika tidak ada kata yang dikenal</span>
+    <span class="c1"># Ambil vektor kata dan hitung rata-ratanya</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="n">words</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Terapkan fungsi untuk mendapatkan vektor untuk setiap dokumen</span>
+<span class="n">document_vectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">document_vector</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">word2vec_model</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">tokenized_corpus</span><span class="p">]</span>
+
+<span class="c1"># Konversi hasil ke DataFrame</span>
+<span class="n">X_word2vec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">document_vectors</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;dim_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">word2vec_model</span><span class="o">.</span><span class="n">vector_size</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil Word Embedding (rata-rata Word2Vec):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">X_word2vec</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Menambahkan kolom target (kategori berita) ke DataFrame Word2Vec untuk klasifikasi</span>
+<span class="c1"># Pastikan kolom target di df_processed adalah &#39;kategori_berita&#39;</span>
+<span class="n">document_vector_df</span> <span class="o">=</span> <span class="n">X_word2vec</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">document_vector_df</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame Word Embedding siap untuk klasifikasi:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">document_vector_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Word Embedding (rata-rata Word2Vec):
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-fd69769b-e463-46b1-ac2e-a129a9fa41e6" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dim_0</th>
+      <th>dim_1</th>
+      <th>dim_2</th>
+      <th>dim_3</th>
+      <th>dim_4</th>
+      <th>dim_5</th>
+      <th>dim_6</th>
+      <th>dim_7</th>
+      <th>dim_8</th>
+      <th>dim_9</th>
+      <th>...</th>
+      <th>dim_90</th>
+      <th>dim_91</th>
+      <th>dim_92</th>
+      <th>dim_93</th>
+      <th>dim_94</th>
+      <th>dim_95</th>
+      <th>dim_96</th>
+      <th>dim_97</th>
+      <th>dim_98</th>
+      <th>dim_99</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.192743</td>
+      <td>0.254132</td>
+      <td>0.003896</td>
+      <td>-0.010282</td>
+      <td>0.103645</td>
+      <td>-0.376636</td>
+      <td>0.094694</td>
+      <td>0.606200</td>
+      <td>-0.061757</td>
+      <td>-0.151692</td>
+      <td>...</td>
+      <td>0.268301</td>
+      <td>0.099167</td>
+      <td>0.002475</td>
+      <td>-0.092872</td>
+      <td>0.661235</td>
+      <td>0.402472</td>
+      <td>0.318486</td>
+      <td>-0.292440</td>
+      <td>0.164326</td>
+      <td>-0.153069</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.170663</td>
+      <td>0.226807</td>
+      <td>0.004934</td>
+      <td>-0.009722</td>
+      <td>0.094167</td>
+      <td>-0.337387</td>
+      <td>0.083928</td>
+      <td>0.542860</td>
+      <td>-0.053549</td>
+      <td>-0.138446</td>
+      <td>...</td>
+      <td>0.239358</td>
+      <td>0.086804</td>
+      <td>0.005054</td>
+      <td>-0.087305</td>
+      <td>0.590127</td>
+      <td>0.362010</td>
+      <td>0.283972</td>
+      <td>-0.260436</td>
+      <td>0.147040</td>
+      <td>-0.135335</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.196379</td>
+      <td>0.259463</td>
+      <td>0.006243</td>
+      <td>-0.012419</td>
+      <td>0.105856</td>
+      <td>-0.383950</td>
+      <td>0.094833</td>
+      <td>0.617767</td>
+      <td>-0.055403</td>
+      <td>-0.155473</td>
+      <td>...</td>
+      <td>0.279619</td>
+      <td>0.099174</td>
+      <td>0.004892</td>
+      <td>-0.098575</td>
+      <td>0.671605</td>
+      <td>0.408527</td>
+      <td>0.324662</td>
+      <td>-0.293335</td>
+      <td>0.165050</td>
+      <td>-0.153551</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.250387</td>
+      <td>0.343625</td>
+      <td>0.003726</td>
+      <td>-0.016048</td>
+      <td>0.144437</td>
+      <td>-0.498406</td>
+      <td>0.124166</td>
+      <td>0.805938</td>
+      <td>-0.064415</td>
+      <td>-0.199811</td>
+      <td>...</td>
+      <td>0.367933</td>
+      <td>0.127760</td>
+      <td>0.008463</td>
+      <td>-0.129703</td>
+      <td>0.867518</td>
+      <td>0.524569</td>
+      <td>0.419420</td>
+      <td>-0.382375</td>
+      <td>0.210378</td>
+      <td>-0.192378</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.161250</td>
+      <td>0.211295</td>
+      <td>0.004188</td>
+      <td>-0.011148</td>
+      <td>0.091677</td>
+      <td>-0.315000</td>
+      <td>0.074567</td>
+      <td>0.499325</td>
+      <td>-0.043477</td>
+      <td>-0.123675</td>
+      <td>...</td>
+      <td>0.222887</td>
+      <td>0.079298</td>
+      <td>0.004941</td>
+      <td>-0.081496</td>
+      <td>0.541558</td>
+      <td>0.331600</td>
+      <td>0.262420</td>
+      <td>-0.241994</td>
+      <td>0.132139</td>
+      <td>-0.125003</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 100 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-fd69769b-e463-46b1-ac2e-a129a9fa41e6')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-fd69769b-e463-46b1-ac2e-a129a9fa41e6 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-fd69769b-e463-46b1-ac2e-a129a9fa41e6');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-2caf6c4c-818f-432c-8baf-9b79851f37fe">
+      <button class="colab-df-quickchart" onclick="quickchart('df-2caf6c4c-818f-432c-8baf-9b79851f37fe')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-2caf6c4c-818f-432c-8baf-9b79851f37fe button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Word Embedding siap untuk klasifikasi:
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-2aa96f17-e878-4d72-8a8f-5653f42e5452" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dim_0</th>
+      <th>dim_1</th>
+      <th>dim_2</th>
+      <th>dim_3</th>
+      <th>dim_4</th>
+      <th>dim_5</th>
+      <th>dim_6</th>
+      <th>dim_7</th>
+      <th>dim_8</th>
+      <th>dim_9</th>
+      <th>...</th>
+      <th>dim_91</th>
+      <th>dim_92</th>
+      <th>dim_93</th>
+      <th>dim_94</th>
+      <th>dim_95</th>
+      <th>dim_96</th>
+      <th>dim_97</th>
+      <th>dim_98</th>
+      <th>dim_99</th>
+      <th>kategori_berita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.192743</td>
+      <td>0.254132</td>
+      <td>0.003896</td>
+      <td>-0.010282</td>
+      <td>0.103645</td>
+      <td>-0.376636</td>
+      <td>0.094694</td>
+      <td>0.606200</td>
+      <td>-0.061757</td>
+      <td>-0.151692</td>
+      <td>...</td>
+      <td>0.099167</td>
+      <td>0.002475</td>
+      <td>-0.092872</td>
+      <td>0.661235</td>
+      <td>0.402472</td>
+      <td>0.318486</td>
+      <td>-0.292440</td>
+      <td>0.164326</td>
+      <td>-0.153069</td>
+      <td>Internasional</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.170663</td>
+      <td>0.226807</td>
+      <td>0.004934</td>
+      <td>-0.009722</td>
+      <td>0.094167</td>
+      <td>-0.337387</td>
+      <td>0.083928</td>
+      <td>0.542860</td>
+      <td>-0.053549</td>
+      <td>-0.138446</td>
+      <td>...</td>
+      <td>0.086804</td>
+      <td>0.005054</td>
+      <td>-0.087305</td>
+      <td>0.590127</td>
+      <td>0.362010</td>
+      <td>0.283972</td>
+      <td>-0.260436</td>
+      <td>0.147040</td>
+      <td>-0.135335</td>
+      <td>Berita</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.196379</td>
+      <td>0.259463</td>
+      <td>0.006243</td>
+      <td>-0.012419</td>
+      <td>0.105856</td>
+      <td>-0.383950</td>
+      <td>0.094833</td>
+      <td>0.617767</td>
+      <td>-0.055403</td>
+      <td>-0.155473</td>
+      <td>...</td>
+      <td>0.099174</td>
+      <td>0.004892</td>
+      <td>-0.098575</td>
+      <td>0.671605</td>
+      <td>0.408527</td>
+      <td>0.324662</td>
+      <td>-0.293335</td>
+      <td>0.165050</td>
+      <td>-0.153551</td>
+      <td>Internasional</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.250387</td>
+      <td>0.343625</td>
+      <td>0.003726</td>
+      <td>-0.016048</td>
+      <td>0.144437</td>
+      <td>-0.498406</td>
+      <td>0.124166</td>
+      <td>0.805938</td>
+      <td>-0.064415</td>
+      <td>-0.199811</td>
+      <td>...</td>
+      <td>0.127760</td>
+      <td>0.008463</td>
+      <td>-0.129703</td>
+      <td>0.867518</td>
+      <td>0.524569</td>
+      <td>0.419420</td>
+      <td>-0.382375</td>
+      <td>0.210378</td>
+      <td>-0.192378</td>
+      <td>Kategori tidak ditemukan</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.161250</td>
+      <td>0.211295</td>
+      <td>0.004188</td>
+      <td>-0.011148</td>
+      <td>0.091677</td>
+      <td>-0.315000</td>
+      <td>0.074567</td>
+      <td>0.499325</td>
+      <td>-0.043477</td>
+      <td>-0.123675</td>
+      <td>...</td>
+      <td>0.079298</td>
+      <td>0.004941</td>
+      <td>-0.081496</td>
+      <td>0.541558</td>
+      <td>0.331600</td>
+      <td>0.262420</td>
+      <td>-0.241994</td>
+      <td>0.132139</td>
+      <td>-0.125003</td>
+      <td>Kategori tidak ditemukan</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 101 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2aa96f17-e878-4d72-8a8f-5653f42e5452')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-2aa96f17-e878-4d72-8a8f-5653f42e5452 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-2aa96f17-e878-4d72-8a8f-5653f42e5452');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-8306526e-f609-434b-a2c3-c1b09fc76a7a">
+      <button class="colab-df-quickchart" onclick="quickchart('df-8306526e-f609-434b-a2c3-c1b09fc76a7a')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-8306526e-f609-434b-a2c3-c1b09fc76a7a button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="klasifikasi-data-dan-perbandingan-hasil">
+<h3>Klasifikasi Data dan Perbandingan Hasil<a class="headerlink" href="#klasifikasi-data-dan-perbandingan-hasil" title="Link to this heading">#</a></h3>
+<p>Langkah ini akan melakukan klasifikasi menggunakan hasil TF-IDF dan Word Embedding. Kita akan menggunakan algoritma klasifikasi sederhana seperti Logistic Regression dan membandingkan akurasinya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Memeriksa distribusi kelas</span>
+<span class="n">class_counts</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribusi Kelas Sebelum Filtering:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">class_counts</span><span class="p">)</span>
+
+<span class="c1"># Memfilter kelas minoritas untuk menghindari error pada split dan model</span>
+<span class="c1"># Tentukan threshold, misal minimal 5 sampel per kelas</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">frequent_classes</span> <span class="o">=</span> <span class="n">class_counts</span><span class="p">[</span><span class="n">class_counts</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_processed</span><span class="p">[</span><span class="n">df_processed</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">frequent_classes</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Gunakan .copy()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Distribusi Kelas Setelah Filtering (Kelas dengan minimal 5 sampel):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1"># --- Klasifikasi menggunakan TF-IDF ---</span>
+
+<span class="c1"># Memfilter hasil TF-IDF sesuai dengan baris yang tersisa di df_filtered</span>
+<span class="c1"># Pastikan indeks df_tfidf sesuai dengan df_processed</span>
+<span class="n">X_tfidf_filtered</span> <span class="o">=</span> <span class="n">df_tfidf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">y_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;kategori_berita&#39;</span><span class="p">]</span>
+
+<span class="c1"># Split data TF-IDF</span>
+<span class="n">X_train_tfidf</span><span class="p">,</span> <span class="n">X_test_tfidf</span><span class="p">,</span> <span class="n">y_train_tfidf</span><span class="p">,</span> <span class="n">y_test_tfidf</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_tfidf_filtered</span><span class="p">,</span> <span class="n">y_filtered</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_filtered</span>
+<span class="p">)</span>
+
+<span class="c1"># Latih model klasifikasi (Logistic Regression)</span>
+<span class="n">model_tfidf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># Tingkatkan max_iter jika konvergensi tidak tercapai</span>
+<span class="n">model_tfidf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_tfidf</span><span class="p">,</span> <span class="n">y_train_tfidf</span><span class="p">)</span>
+
+<span class="c1"># Prediksi dan evaluasi TF-IDF</span>
+<span class="n">y_pred_tfidf</span> <span class="o">=</span> <span class="n">model_tfidf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_tfidf</span><span class="p">)</span>
+<span class="n">accuracy_tfidf</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_tfidf</span><span class="p">,</span> <span class="n">y_pred_tfidf</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Hasil Klasifikasi Menggunakan TF-IDF ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi: </span><span class="si">{</span><span class="n">accuracy_tfidf</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test_tfidf</span><span class="p">,</span> <span class="n">y_pred_tfidf</span><span class="p">))</span>
+
+
+<span class="c1"># --- Klasifikasi menggunakan Word Embedding ---</span>
+
+<span class="c1"># Memfilter hasil Word Embedding sesuai dengan baris yang tersisa di df_filtered</span>
+<span class="c1"># Pastikan indeks X_word2vec sesuai dengan df_processed</span>
+<span class="n">X_word2vec_filtered</span> <span class="o">=</span> <span class="n">X_word2vec</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c1"># Split data Word Embedding</span>
+<span class="n">X_train_word2vec</span><span class="p">,</span> <span class="n">X_test_word2vec</span><span class="p">,</span> <span class="n">y_train_word2vec</span><span class="p">,</span> <span class="n">y_test_word2vec</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_word2vec_filtered</span><span class="p">,</span> <span class="n">y_filtered</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_filtered</span>
+<span class="p">)</span>
+
+<span class="c1"># Latih model klasifikasi (Logistic Regression)</span>
+<span class="n">model_word2vec</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># Tingkatkan max_iter</span>
+<span class="n">model_word2vec</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_word2vec</span><span class="p">,</span> <span class="n">y_train_word2vec</span><span class="p">)</span>
+
+<span class="c1"># Prediksi dan evaluasi Word Embedding</span>
+<span class="n">y_pred_word2vec</span> <span class="o">=</span> <span class="n">model_word2vec</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_word2vec</span><span class="p">)</span>
+<span class="n">accuracy_word2vec</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_word2vec</span><span class="p">,</span> <span class="n">y_pred_word2vec</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Hasil Klasifikasi Menggunakan Word Embedding (rata-rata Word2Vec) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi: </span><span class="si">{</span><span class="n">accuracy_word2vec</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test_word2vec</span><span class="p">,</span> <span class="n">y_pred_word2vec</span><span class="p">))</span>
+
+<span class="c1"># --- Perbandingan ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Perbandingan Akurasi ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi TF-IDF: </span><span class="si">{</span><span class="n">accuracy_tfidf</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi Word Embedding: </span><span class="si">{</span><span class="n">accuracy_word2vec</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribusi Kelas Sebelum Filtering:
+kategori_berita
+Berita                      140
+Internasional                17
+Kategori tidak ditemukan     17
+Melindungi Tuah Marwah        9
+Foto News                     8
+Kolom                         5
+Dw                            3
+Bbc World                     1
+Name: count, dtype: int64
+
+Distribusi Kelas Setelah Filtering (Kelas dengan minimal 5 sampel):
+kategori_berita
+Berita                      140
+Internasional                17
+Kategori tidak ditemukan     17
+Melindungi Tuah Marwah        9
+Foto News                     8
+Kolom                         5
+Name: count, dtype: int64
+
+--- Hasil Klasifikasi Menggunakan TF-IDF ---
+Akurasi: 0.7250
+
+Classification Report:
+                          precision    recall  f1-score   support
+
+                  Berita       0.72      1.00      0.84        29
+               Foto News       0.00      0.00      0.00         2
+           Internasional       0.00      0.00      0.00         3
+Kategori tidak ditemukan       0.00      0.00      0.00         3
+                   Kolom       0.00      0.00      0.00         1
+  Melindungi Tuah Marwah       0.00      0.00      0.00         2
+
+                accuracy                           0.72        40
+               macro avg       0.12      0.17      0.14        40
+            weighted avg       0.53      0.72      0.61        40
+
+
+--- Hasil Klasifikasi Menggunakan Word Embedding (rata-rata Word2Vec) ---
+Akurasi: 0.7250
+
+Classification Report:
+                          precision    recall  f1-score   support
+
+                  Berita       0.72      1.00      0.84        29
+               Foto News       0.00      0.00      0.00         2
+           Internasional       0.00      0.00      0.00         3
+Kategori tidak ditemukan       0.00      0.00      0.00         3
+                   Kolom       0.00      0.00      0.00         1
+  Melindungi Tuah Marwah       0.00      0.00      0.00         2
+
+                accuracy                           0.72        40
+               macro avg       0.12      0.17      0.14        40
+            weighted avg       0.53      0.72      0.61        40
+
+
+--- Perbandingan Akurasi ---
+Akurasi TF-IDF: 0.7250
+Akurasi Word Embedding: 0.7250
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+/usr/local/lib/python3.12/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, len(result))
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -3130,6 +3886,15 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
         <p class="prev-next-title">crawling</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Klasifikasi%20LDA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Klasifikasi LDA</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -3151,14 +3916,17 @@ Hasil disimpan dalam file &#39;pta_trunojoyo_bersih.csv&#39;
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-link-data-text">Crawling Link data text</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-semua-judul-dan-informasi-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">kode untuk mengambil semua judul dan informasi diperlukan dari judul itu yang ada di pta.trunojoyo.ac.id dan khusus untuk fakultas teknik</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-berita-dari-sebuah-website">kode untuk mengambil berita dari sebuah website</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-semua-judul-dan-informasi-yand-diperlukan-dari-judul-itu-yang-ada-di-pta-trunojoyo-ac-id-dan-khusus-untuk-fakultas-teknik">kode untuk mengambil semua judul dan informasi yand diperlukan dari judul itu yang ada di pta.trunojoyo.ac.id dan khusus untuk fakultas teknik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-untuk-mengambil-berita-dari-sebuah-website-berita">kode untuk mengambil berita dari sebuah website berita</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-uuntuk-mengambil-semua-link-yang-ada-di-sebuah-website-dan-mencari-lagi-semua-link-yang-ada-di-dalamnya-smpai-semua-telah-terjelajahi">kode uuntuk mengambil semua link yang ada di sebuah website dan mencari lagi semua link yang ada di dalamnya smpai semua telah terjelajahi</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukann-praprosess-data-teks">melakukann praprosess data teks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-proses-untuk-isi-berita">pra proses untuk isi berita</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praproses-untuk-abstrak-pta">praproses untuk abstrak pta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-tfidf-dan-word-embedding-ntuk-berita-yang-telah-di-bersihkan">melakukan tfidf dan word embedding ntuk berita yang telah di bersihkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-tf-idf-pada-data-berita">Melakukan TF-IDF pada Data Berita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-word-embedding-menggunakan-rata-rata-word2vec">Melakukan Word Embedding (menggunakan rata-rata Word2Vec)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-data-dan-perbandingan-hasil">Klasifikasi Data dan Perbandingan Hasil</a></li>
 </ul>
 </li>
 </ul>
