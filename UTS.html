@@ -1,0 +1,1582 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>No 1: Analisis Klasifikasi Berita (Berita.csv) &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UTS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Klasifikasi LDA" href="Klasifikasi%20LDA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profile
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Pengantar%20Web%20Mining.html">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web%20Crawling.html">crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling%20page.html">crawling page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%20LDA.html">Klasifikasi LDA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">No 1: Analisis Klasifikasi Berita (Berita.csv)</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUTS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UTS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>No 1: Analisis Klasifikasi Berita (Berita.csv)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">No 1: Analisis Klasifikasi Berita (Berita.csv)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-data">Pra-pemrosesan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tf-idf">Ekstraksi Fitur (TF-IDF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-modelling-lda">Topic Modelling (LDA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-naive-bayes-dan-svm">Klasifikasi (Naive Bayes dan SVM)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#no-2-analisis-clustering-dokumen-spam-csv">No 2: Analisis Clustering Dokumen (spam.csv)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Load Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Pra-pemrosesan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ekstraksi Fitur (TF-IDF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering (K-Means)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-dan-analisis-cluster">Evaluasi dan Analisis Cluster</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opsional-visualisasi-sederhana">(Opsional) Visualisasi Sederhana</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="no-1-analisis-klasifikasi-berita-berita-csv">
+<h1>No 1: Analisis Klasifikasi Berita (Berita.csv)<a class="headerlink" href="#no-1-analisis-klasifikasi-berita-berita-csv" title="Link to this heading">#</a></h1>
+<section id="import-library">
+<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<p>Menggunakan library umum untuk pemrosesan data dan machine learning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span> <span class="c1"># Untuk regular expressions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">LatentDirichletAllocation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="c1"># Tambahkan jika ingin menggunakan NLTK untuk preprocessing</span>
+<span class="c1"># nltk.download(&#39;punkt&#39;)</span>
+<span class="c1"># nltk.download(&#39;stopwords&#39;)</span>
+
+<span class="c1"># Untuk menampilkan output lebih rapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-data">
+<h2>Load Data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data dari file CSV</span>
+<span class="c1"># Menggunakan google.colab.files untuk menampilkan pop-up upload file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="c1"># Asumsikan hanya satu file yang diupload</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">uploaded</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User uploaded file &quot;</span><span class="si">{name}</span><span class="s1">&quot; with length </span><span class="si">{length}</span><span class="s1"> bytes&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+      <span class="n">name</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">])))</span>
+  <span class="c1"># Karena file memiliki header, kita bisa membacanya langsung tanpa header=None</span>
+  <span class="n">df_berita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)))</span>
+
+
+<span class="c1"># Beri nama kolom berdasarkan struktur yang dilihat sebelumnya</span>
+<span class="c1"># Kolom 0: No, Kolom 1: judul, Kolom 2: berita, Kolom 3: tanggal, Kolom 4: kategori, Kolom 5: link</span>
+<span class="c1"># Jika Anda ingin mengganti nama kolom yang sudah ada, gunakan rename</span>
+<span class="n">df_berita</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;tanggal&#39;</span><span class="p">,</span> <span class="s1">&#39;kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Data:&quot;</span><span class="p">,</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tampilan Awal Data:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data per kategori:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;kategori&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+     <input type="file" id="files-001a68dc-a9a2-4657-b012-8e30f6d189bb" name="files[]" multiple disabled
+        style="border:none" />
+     <output id="result-001a68dc-a9a2-4657-b012-8e30f6d189bb">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+      <script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving Berita.csv to Berita (1).csv
+User uploaded file &quot;Berita (1).csv&quot; with length 3941868 bytes
+Ukuran Data: (1500, 6)
+
+Tampilan Awal Data:
+   No                                              judul  \
+0   1  Airlangga Harap Kenaikan UMP Tingkatkan Daya B...   
+1   2  PT SIER Beri Penghargaan untuk 50 Tenant Terba...   
+2   3  Prabowo Bakal Bentuk Kementerian Penerimaan Ne...   
+3   4  Sinergi Kemenag &amp; BPJS Ketenagakerjaan Lindung...   
+4   5  Pemerintah Segera Bentuk Satgas PHK Usai Tetap...   
+
+                                          isi_berita  \
+0  Menteri Koordinator (Menko) Bidang Perekonomia...   
+1  Dalam rangka memeriahkan hari jadi ke-50, PT S...   
+2  Wacana Presiden Prabowo Subianto akan membentu...   
+3  BPJS Ketenagakerjaan dan Kementerian Agama (Ke...   
+4  Pemerintah akan segera membentuk Satuan Tugas ...   
+
+                         tanggal kategori  \
+0  Minggu, 01 Des 2024 23:40 WIB  Ekonomi   
+1  Minggu, 01 Des 2024 20:45 WIB  Ekonomi   
+2  Minggu, 01 Des 2024 19:40 WIB  Ekonomi   
+3  Minggu, 01 Des 2024 19:03 WIB  Ekonomi   
+4  Minggu, 01 Des 2024 19:00 WIB  Ekonomi   
+
+                                                 url  
+0  https://www.cnnindonesia.com/ekonomi/202412012...  
+1  https://www.cnnindonesia.com/ekonomi/202412012...  
+2  https://www.cnnindonesia.com/ekonomi/202412011...  
+3  https://www.cnnindonesia.com/ekonomi/202412011...  
+4  https://www.cnnindonesia.com/ekonomi/202412011...  
+
+Jumlah data per kategori:
+kategori
+Ekonomi          375
+Olahraga         375
+Nasional         375
+Internasional    375
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pra-pemrosesan-data">
+<h2>Pra-pemrosesan Data<a class="headerlink" href="#pra-pemrosesan-data" title="Link to this heading">#</a></h2>
+<p>Membersihkan dan menyiapkan teks untuk analisis. Ini termasuk menggabungkan kolom-kolom teks jika diperlukan, membersihkan karakter aneh, menghilangkan angka, spasi berlebih, mengubah teks menjadi huruf kecil, melakukan tokenisasi, dan menghilangkan stop words. Langkah ini memastikan tidak ada nilai kosong yang mengganggu dan teks siap untuk tahap selanjutnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fungsi sederhana untuk membersihkan teks</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="c1"># Hilangkan karakter aneh dan simbol yang tidak perlu</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+    <span class="c1"># Hilangkan angka</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># Hilangkan spasi berlebih</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># Konversi ke huruf kecil</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+<span class="c1"># Terapkan fungsi ke kolom isi_berita</span>
+<span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
+
+<span class="c1"># Hilangkan baris dengan isi_berita_clean kosong</span>
+<span class="n">df_berita</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Unduh resource NLTK jika belum ada (tetap dibutuhkan untuk stop words)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">nltk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;corpora/stopwords&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">LookupError</span><span class="p">:</span>
+    <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tokenisasi sederhana (split by space) dan hilangkan stop words</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span> <span class="c1"># Gunakan stop words Bahasa Indonesia</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tokenize_and_filter</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># Simple split by space</span>
+    <span class="n">filtered_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_tokens</span><span class="p">)</span>
+
+<span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_processed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize_and_filter</span><span class="p">)</span>
+
+
+<span class="c1"># Cek ulang ukuran data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Data Setelah Pra-pemrosesan:&quot;</span><span class="p">,</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Cek apakah kategori kosong</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data per kategori setelah cleaning:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;kategori&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1"># Ambil teks bersih dan kategori</span>
+<span class="n">X_text</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_processed&#39;</span><span class="p">]</span> <span class="c1"># Gunakan kolom yang sudah diproses</span>
+<span class="n">y_category</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;kategori&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tampilan Awal Data setelah Tokenisasi dan Stop Words Removal:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_processed&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran Data Setelah Pra-pemrosesan: (1500, 8)
+
+Jumlah data per kategori setelah cleaning:
+kategori
+Ekonomi          375
+Olahraga         375
+Nasional         375
+Internasional    375
+Name: count, dtype: int64
+
+Tampilan Awal Data setelah Tokenisasi dan Stop Words Removal:
+                                    isi_berita_clean  \
+0  menteri koordinator menko bidang perekonomian ...   
+1  dalam rangka memeriahkan hari jadi ke pt surab...   
+2  wacana presiden prabowo subianto akan membentu...   
+3  bpjs ketenagakerjaan dan kementerian agama kem...   
+4  pemerintah akan segera membentuk satuan tugas ...   
+
+                                isi_berita_processed  
+0  menteri koordinator menko bidang perekonomian ...  
+1  rangka memeriahkan pt surabaya industrial esta...  
+2  wacana presiden prabowo subianto membentuk mem...  
+3  bpjs ketenagakerjaan kementerian agama kemenag...  
+4  pemerintah membentuk satuan tugas pemutusan hu...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ekstraksi-fitur-tf-idf">
+<h2>Ekstraksi Fitur (TF-IDF)<a class="headerlink" href="#ekstraksi-fitur-tf-idf" title="Link to this heading">#</a></h2>
+<p>Mengubah teks menjadi representasi numerik menggunakan TF-IDF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi TfidfVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span> <span class="c1"># Bisa disesuaikan</span>
+
+<span class="c1"># Fit dan transform teks</span>
+<span class="n">X_tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Matriks TF-IDF:&quot;</span><span class="p">,</span> <span class="n">X_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran Matriks TF-IDF: (1500, 5000)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-modelling-lda">
+<h2>Topic Modelling (LDA)<a class="headerlink" href="#topic-modelling-lda" title="Link to this heading">#</a></h2>
+<p>Mencoba menemukan topik-topik utama dalam berita.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi LDA</span>
+<span class="n">n_topics</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Misalnya, ingin menemukan 5 topik</span>
+<span class="c1"># LatentDirichletAllocation untuk menemukan topik dalam data teks</span>
+<span class="n">lda_model</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_topics</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Fit LDA ke matriks TF-IDF</span>
+<span class="n">lda_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tfidf</span><span class="p">)</span>
+
+<span class="c1"># Fungsi untuk menampilkan kata-kata penting dalam setiap topik</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">display_topics</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">no_top_words</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">topic_idx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Topik #</span><span class="si">{</span><span class="n">topic_idx</span><span class="si">}</span><span class="s2">: &quot;</span>
+        <span class="n">message</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">no_top_words</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1"># Ambil nama fitur (kata-kata) dari vectorizer</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Tampilkan topik</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Hasil Topic Modelling (LDA) dengan </span><span class="si">{</span><span class="n">n_topics</span><span class="si">}</span><span class="s2"> Topik ---&quot;</span><span class="p">)</span>
+<span class="n">display_topics</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Hasil Topic Modelling (LDA) dengan 5 Topik ---
+Topik #0: laut pagar tangerang kkp nelayan sertifikat misterius perikanan hgb nusron
+Topik #1: persen rp prabowo program kpk ppn jakarta harga makan pemerintah
+Topik #2: israel gaza gencatan senjata kebakaran korban trump hamas warga orang
+Topik #3: mentah barel minyak sen hasjim brent hmpv texas wti intermediate
+Topik #4: timnas indonesia pemain piala gol pelatih menit laga vietnam pertandingan
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="klasifikasi-naive-bayes-dan-svm">
+<h2>Klasifikasi (Naive Bayes dan SVM)<a class="headerlink" href="#klasifikasi-naive-bayes-dan-svm" title="Link to this heading">#</a></h2>
+<p>Melatih model klasifikasi menggunakan fitur TF-IDF untuk memprediksi kategori berita (misalnya Nasional, Internasional, Ekonomi, dll., jika labelnya tersedia atau bisa dibuat dari data).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bagi data menjadi train dan test set</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_tfidf</span><span class="p">,</span> <span class="n">y_category</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_category</span><span class="p">)</span>
+
+<span class="c1"># --- Naive Bayes ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Klasifikasi dengan Naive Bayes ---&quot;</span><span class="p">)</span>
+<span class="n">nb_model</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+<span class="n">nb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Prediksi</span>
+<span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Evaluasi</span>
+<span class="n">acc_nb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi Naive Bayes: </span><span class="si">{</span><span class="n">acc_nb</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report (Naive Bayes):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">))</span>
+
+<span class="c1"># --- SVM ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Klasifikasi dengan SVM ---&quot;</span><span class="p">)</span>
+<span class="c1"># SVM bisa memakan waktu lama untuk data besar, gunakan subset jika perlu</span>
+<span class="c1"># Misalnya, gunakan hanya 1000 data pertama untuk demonstrasi cepat</span>
+<span class="c1"># X_train_svm, y_train_svm = X_train[:1000], y_train[:1000]</span>
+<span class="c1"># X_test_svm, y_test_svm = X_test[:500], y_test[:500]</span>
+
+<span class="c1"># Untuk demonstrasi penuh, gunakan data train/test asli (bisa lama)</span>
+<span class="n">svm_model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># Linear kernel umum digunakan untuk teks</span>
+<span class="n">svm_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Prediksi</span>
+<span class="n">y_pred_svm</span> <span class="o">=</span> <span class="n">svm_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Evaluasi</span>
+<span class="n">acc_svm</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi SVM: </span><span class="si">{</span><span class="n">acc_svm</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report (SVM):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">))</span>
+
+<span class="c1"># Jika ingin melihat confusion matrix untuk salah satu model</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confusion Matrix (SVM):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Klasifikasi dengan Naive Bayes ---
+Akurasi Naive Bayes: 0.9400
+
+Classification Report (Naive Bayes):
+               precision    recall  f1-score   support
+
+      Ekonomi       0.84      0.97      0.90        75
+Internasional       0.99      0.99      0.99        75
+     Nasional       0.97      0.80      0.88        75
+     Olahraga       0.99      1.00      0.99        75
+
+     accuracy                           0.94       300
+    macro avg       0.95      0.94      0.94       300
+ weighted avg       0.95      0.94      0.94       300
+
+
+--- Klasifikasi dengan SVM ---
+Akurasi SVM: 0.9533
+
+Classification Report (SVM):
+               precision    recall  f1-score   support
+
+      Ekonomi       0.88      0.97      0.92        75
+Internasional       1.00      0.97      0.99        75
+     Nasional       0.96      0.87      0.91        75
+     Olahraga       0.99      1.00      0.99        75
+
+     accuracy                           0.95       300
+    macro avg       0.96      0.95      0.95       300
+ weighted avg       0.96      0.95      0.95       300
+
+
+Confusion Matrix (SVM):
+[[73  0  1  1]
+ [ 0 73  2  0]
+ [10  0 65  0]
+ [ 0  0  0 75]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="no-2-analisis-clustering-dokumen-spam-csv">
+<h1>No 2: Analisis Clustering Dokumen (spam.csv)<a class="headerlink" href="#no-2-analisis-clustering-dokumen-spam-csv" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>Import Library<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Menggunakan library yang diperlukan untuk clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Load Data<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data dari file CSV</span>
+<span class="c1"># Menggunakan google.colab.files untuk menampilkan pop-up upload file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="c1"># Asumsikan hanya satu file yang diupload</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">uploaded</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User uploaded file &quot;</span><span class="si">{name}</span><span class="s1">&quot; with length </span><span class="si">{length}</span><span class="s1"> bytes&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+      <span class="n">name</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">])))</span>
+  <span class="c1"># Coba berbagai encoding jika utf-8 gagal, misalnya &#39;latin-1&#39; atau &#39;ISO-8859-1&#39;</span>
+  <span class="k">try</span><span class="p">:</span>
+      <span class="c1"># Baca dengan header=0 karena file sepertinya punya header di baris pertama</span>
+      <span class="n">df_spam</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)),</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UTF-8 decoding failed, trying latin-1...&quot;</span><span class="p">)</span>
+      <span class="c1"># Baca dengan header=0 karena file sepertinya punya header di baris pertama</span>
+      <span class="n">df_spam</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">uploaded</span><span class="p">[</span><span class="n">fn</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)),</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># Beri nama kolom untuk kemudahan</span>
+<span class="c1"># Asumsikan kolom pertama adalah &#39;label&#39; (sebelumnya &#39;id&#39;) dan kolom kedua adalah &#39;pesan&#39; (sebelumnya &#39;Text&#39;)</span>
+<span class="c1"># Kita akan mengganti nama kolom pertama dan kedua</span>
+<span class="n">df_spam</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;pesan&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># Gabungkan kolom-kolom yang tersisa jika ada (untuk jaga-jaga jika struktur berbeda)</span>
+<span class="c1"># Misalnya, jika ada kolom tambahan setelah &#39;pesan&#39; yang merupakan bagian dari pesan</span>
+<span class="c1"># Kita hanya akan menggunakan kolom &#39;label&#39; dan &#39;pesan&#39;</span>
+<span class="n">df_spam</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;pesan&#39;</span><span class="p">]]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Data:&quot;</span><span class="p">,</span> <span class="n">df_spam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tampilan Awal Data (pesan_utuh):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_spam</span><span class="o">.</span><span class="n">head</span><span class="p">())</span> <span class="c1"># Tampilkan 5 baris pertama</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data per label:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+     <input type="file" id="files-99bcbaf2-2d68-4675-8485-09062ac307b1" name="files[]" multiple disabled
+        style="border:none" />
+     <output id="result-99bcbaf2-2d68-4675-8485-09062ac307b1">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+      <script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving spam.csv to spam (2).csv
+User uploaded file &quot;spam (2).csv&quot; with length 507385 bytes
+UTF-8 decoding failed, trying latin-1...
+Ukuran Data: (5572, 2)
+
+Tampilan Awal Data (pesan_utuh):
+   label                                              pesan
+0      1  Go until jurong point, crazy.. Available only ...
+1      2                      Ok lar... Joking wif u oni...
+2      3  Free entry in 2 a wkly comp to win FA Cup fina...
+3      4  U dun say so early hor... U c already then say...
+4      5  Nah I don&#39;t think he goes to usf, he lives aro...
+
+Jumlah data per label:
+label
+5572    1
+1       1
+2       1
+3       1
+5556    1
+       ..
+9       1
+8       1
+7       1
+6       1
+5       1
+Name: count, Length: 5572, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Pra-pemrosesan Data<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Kita akan membersihkan teks dan memastikan hanya pesan yang relevan yang diproses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fungsi untuk membersihkan teks pesan</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clean_text_sms</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="c1"># Hilangkan karakter aneh dan simbol yang tidak perlu</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+    <span class="c1"># Hilangkan spasi berlebih</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># Konversi ke huruf kecil</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+<span class="c1"># Terapkan fungsi ke kolom pesan</span>
+<span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;pesan_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;pesan&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text_sms</span><span class="p">)</span>
+
+<span class="c1"># Hilangkan baris dengan pesan_clean kosong atau hanya berisi angka (ID)</span>
+<span class="c1"># Kita bisa menggunakan regex untuk memeriksa apakah teks hanya angka</span>
+<span class="n">df_spam</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[</span><span class="o">~</span><span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;pesan_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\d+$&#39;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="c1"># Hilangkan baris yang hanya berisi angka</span>
+<span class="n">df_spam</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[</span><span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;pesan_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># Hilangkan baris kosong</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Data Setelah Pra-pemrosesan:&quot;</span><span class="p">,</span> <span class="n">df_spam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Ambil teks bersih untuk clustering</span>
+<span class="n">X_sms_text</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;pesan_clean&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Beberapa contoh pesan setelah cleaning:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_sms_text</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran Data Setelah Pra-pemrosesan: (5569, 3)
+
+Beberapa contoh pesan setelah cleaning:
+[&#39;go until jurong point crazy available only in bugis n great world la e buffet cine there got amore wat&#39;
+ &#39;ok lar joking wif u oni&#39;
+ &#39;free entry in 2 a wkly comp to win fa cup final tkts 21st may 2005 text fa to 87121 to receive entry question std txt rate t c s apply 08452810075over18 s&#39;
+ &#39;u dun say so early hor u c already then say&#39;
+ &#39;nah i don t think he goes to usf he lives around here though&#39;
+ &#39;freemsg hey there darling it s been 3 week s now and no word back i d like some fun you up for it still tb ok xxx std chgs to send å 1 50 to rcv&#39;
+ &#39;even my brother is not like to speak with me they treat me like aids patent&#39;
+ &#39;as per your request melle melle oru minnaminunginte nurungu vettam has been set as your callertune for all callers press 9 to copy your friends callertune&#39;
+ &#39;winner as a valued network customer you have been selected to receivea å 900 prize reward to claim call 09061701461 claim code kl341 valid 12 hours only&#39;
+ &#39;had your mobile 11 months or more u r entitled to update to the latest colour mobiles with camera for free call the mobile update co free on 08002986030&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Ekstraksi Fitur (TF-IDF)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Mengubah teks pesan menjadi representasi numerik menggunakan TF-IDF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi TfidfVectorizer</span>
+<span class="c1"># Karena ini pesan singkat, kita bisa menyesuaikan parameter</span>
+<span class="n">vectorizer_sms</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># ngram_range bisa digunakan untuk mempertimbangkan pasangan kata</span>
+
+<span class="c1"># Fit dan transform teks</span>
+<span class="n">X_sms_tfidf</span> <span class="o">=</span> <span class="n">vectorizer_sms</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_sms_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran Matriks TF-IDF:&quot;</span><span class="p">,</span> <span class="n">X_sms_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran Matriks TF-IDF: (5569, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clustering-k-means">
+<h2>Clustering (K-Means)<a class="headerlink" href="#clustering-k-means" title="Link to this heading">#</a></h2>
+<p>Menggunakan algoritma K-Means untuk mengelompokkan pesan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tentukan jumlah cluster (k)</span>
+<span class="c1"># Ini bisa diiterasi atau dipilih berdasarkan domain knowledge atau metode seperti Elbow Method</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Misalnya, ingin menemukan 5 cluster</span>
+
+<span class="c1"># Inisialisasi dan fit KMeans</span>
+<span class="n">kmeans_model</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># n_init untuk versi sklearn terbaru</span>
+<span class="n">kmeans_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sms_tfidf</span><span class="p">)</span>
+
+<span class="c1"># Dapatkan label cluster untuk setiap pesan</span>
+<span class="n">cluster_labels</span> <span class="o">=</span> <span class="n">kmeans_model</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="c1"># Tambahkan label cluster ke dataframe</span>
+<span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_labels</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Hasil Clustering dengan K-Means (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah pesan per cluster:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Hasil Clustering dengan K-Means (k=5) ---
+Jumlah pesan per cluster:
+cluster
+0     287
+1    4406
+2     254
+3     399
+4     223
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluasi-dan-analisis-cluster">
+<h2>Evaluasi dan Analisis Cluster<a class="headerlink" href="#evaluasi-dan-analisis-cluster" title="Link to this heading">#</a></h2>
+<p>Menghitung Silhouette Score dan melihat contoh pesan dari masing-masing cluster.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung Silhouette Score</span>
+<span class="n">silhouette_avg</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_sms_tfidf</span><span class="p">,</span> <span class="n">cluster_labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Silhouette Score untuk k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">silhouette_avg</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lihat contoh pesan dari masing-masing cluster</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Contoh Pesan dari Setiap Cluster ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cluster </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="n">cluster_messages</span> <span class="o">=</span> <span class="n">df_spam</span><span class="p">[</span><span class="n">df_spam</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="s1">&#39;pesan&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Use &#39;pesan&#39; column</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">msg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cluster_messages</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score untuk k=5: 0.0225
+
+--- Contoh Pesan dari Setiap Cluster ---
+
+Cluster 0:
+  1. England v Macedonia - dont miss the goals/team news. Txt ur national team to 87077 eg ENGLAND to 87077 Try:WALES, SCOTLAND 4txt/Ì¼1.20 POBOXox36504W45WQ 16+
+  2. Aft i finish my lunch then i go str down lor. Ard 3 smth lor. U finish ur lunch already?
+  3. Today is \song dedicated day..\&quot; Which song will u dedicate for me? Send this to all ur valuable frnds but first rply me...&quot;
+  4. Urgent UR awarded a complimentary trip to EuroDisinc Trav, Aco&amp;Entry41 Or å£1000. To claim txt DIS to 87121 18+6*å£1.50(moreFrmMob. ShrAcomOrSglSuplt)10, LS1 3AJ
+  5. Ela kano.,il download, come wen ur free..
+
+Cluster 1:
+  1. Ok lar... Joking wif u oni...
+  2. Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&amp;C&#39;s apply 08452810075over18&#39;s
+  3. U dun say so early hor... U c already then say...
+  4. Nah I don&#39;t think he goes to usf, he lives around here though
+  5. FreeMsg Hey there darling it&#39;s been 3 week&#39;s now and no word back! I&#39;d like some fun you up for it still? Tb ok! XxX std chgs to send, å£1.50 to rcv
+
+Cluster 2:
+  1. Wow. I never realized that you were so embarassed by your accomodations. I thought you liked it, since i was doing the best i could and you always seemed so happy about \the cave\&quot;. I&#39;m sorry I didn&#39;t and don&#39;t have more to give. I&#39;m sorry i offered. I&#39;m sorry your room was so embarassing.&quot;
+  2. Sorry, I&#39;ll call later in meeting.
+  3. Sorry my roommates took forever, it ok if I come by now?
+  4. Sorry, I&#39;ll call later
+  5. Yeah do! DonÛ÷t stand to close tho- youÛ÷ll catch something!
+
+Cluster 3:
+  1. Go until jurong point, crazy.. Available only in bugis n great world la e buffet... Cine there got amore wat...
+  2. I&#39;m back &amp;amp; we&#39;re packing the car now, I&#39;ll let you know if there&#39;s room
+  3. Yeah he got in at 2 and was v apologetic. n had fallen out and she was actin like spoilt child and he got caught up in that. Till 2! But we won&#39;t go there! Not doing too badly cheers. You? 
+  4. Oops, I&#39;ll let you know when my roommate&#39;s done
+  5. U don&#39;t know how stubborn I am. I didn&#39;t even want to go to the hospital. I kept telling Mark I&#39;m not a weak sucker. Hospitals are for weak suckers.
+
+Cluster 4:
+  1. Great! I hope you like your man well endowed. I am  &amp;lt;#&amp;gt;  inches...
+  2. A gram usually runs like  &amp;lt;#&amp;gt; , a half eighth is smarter though and gets you almost a whole second gram for  &amp;lt;#&amp;gt;
+  3. Do you know what Mallika Sherawat did yesterday? Find out now @  &amp;lt;URL&amp;gt;
+  4. Does not operate after  &amp;lt;#&amp;gt;  or what
+  5. Turns out my friends are staying for the whole show and won&#39;t be back til ~ &amp;lt;#&amp;gt; , so feel free to go ahead and smoke that $ &amp;lt;#&amp;gt;  worth
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="opsional-visualisasi-sederhana">
+<h2>(Opsional) Visualisasi Sederhana<a class="headerlink" href="#opsional-visualisasi-sederhana" title="Link to this heading">#</a></h2>
+<p>Menggunakan t-SNE untuk mereduce dimensi dan memvisualisasikan cluster (ini bisa memakan waktu untuk data besar).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Ambil subset data untuk visualisasi karena t-SNE bisa lambat</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="k">if</span> <span class="n">X_sms_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">sample_size</span><span class="p">:</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">X_sms_tfidf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample_size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">X_subset</span> <span class="o">=</span> <span class="n">X_sms_tfidf</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+    <span class="n">labels_subset</span> <span class="o">=</span> <span class="n">cluster_labels</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">X_subset</span> <span class="o">=</span> <span class="n">X_sms_tfidf</span>
+    <span class="n">labels_subset</span> <span class="o">=</span> <span class="n">cluster_labels</span>
+
+<span class="c1"># Inisialisasi t-SNE</span>
+<span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">X_subset</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Transformasi data ke 2D</span>
+<span class="n">X_tsne</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_subset</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span> <span class="c1"># .toarray() karena X_subset adalah sparse matrix</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_tsne</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_tsne</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels_subset</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Visualisasi Cluster (K-Means, k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">) - t-SNE&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t-SNE Component 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;t-SNE Component 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f8bbb2df7abe568d8ccb3d7834f203154939ec567e4b3bea8a3a1c9d65d73ce5.png" src="_images/f8bbb2df7abe568d8ccb3d7834f203154939ec567e4b3bea8a3a1c9d65d73ce5.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Klasifikasi%20LDA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Klasifikasi LDA</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">No 1: Analisis Klasifikasi Berita (Berita.csv)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-data">Pra-pemrosesan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tf-idf">Ekstraksi Fitur (TF-IDF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-modelling-lda">Topic Modelling (LDA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-naive-bayes-dan-svm">Klasifikasi (Naive Bayes dan SVM)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#no-2-analisis-clustering-dokumen-spam-csv">No 2: Analisis Clustering Dokumen (spam.csv)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Load Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Pra-pemrosesan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ekstraksi Fitur (TF-IDF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering (K-Means)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-dan-analisis-cluster">Evaluasi dan Analisis Cluster</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opsional-visualisasi-sederhana">(Opsional) Visualisasi Sederhana</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
